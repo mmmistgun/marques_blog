@@ -236,56 +236,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Markdown语法笔记</title>
-    <url>/archives/b60f5572.html</url>
-    <content><![CDATA[<h1 id="Markdown语法笔记"><a href="#Markdown语法笔记" class="headerlink" title="Markdown语法笔记"></a><strong>Markdown语法笔记</strong></h1><p>markdown是一种纯文本格式的标记语言。简单易上手，但还是敌不过久了没写，总是忘记语法。</p>
-<span id="more"></span>
-
-<h2 id="一、标题"><a href="#一、标题" class="headerlink" title="一、标题"></a>一、标题</h2><p>通过<strong>井号的个数</strong>来判断标题级数。最高支持六级！<br>需要注意的是#后需要添加空格； </p>
-<figure class="highlight clean"><table><tr><td class="code"><pre><span class="line">## 这是二级标题</span><br></pre></td></tr></table></figure>
-<h2 id="这是二级标题"><a href="#这是二级标题" class="headerlink" title="这是二级标题"></a>这是二级标题</h2><h2 id="二、字体"><a href="#二、字体" class="headerlink" title="二、字体"></a>二、字体</h2><ul>
-<li><h3 id="加粗"><a href="#加粗" class="headerlink" title="加粗"></a><strong>加粗</strong></h3>在要加粗的文字两边用<strong>两个</strong>星号包起来<figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line"><span class="strong">**两个星号**</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<ul>
-<li><h3 id="斜体"><a href="#斜体" class="headerlink" title="斜体"></a><em>斜体</em></h3>在要加粗的文字两边用<strong>一个</strong>星号包起来<figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line"><span class="strong">*一个星号*</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<ul>
-<li><h3 id="斜体加粗"><a href="#斜体加粗" class="headerlink" title="斜体加粗"></a><em><strong>斜体加粗</strong></em></h3><p>在要加粗的文字两边用<em><strong>三个</strong></em>星号包起来</p>
-<figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line"><span class="strong">***三个星号**</span>*</span><br></pre></td></tr></table></figure></li>
-<li><h3 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a><del>删除线</del></h3><p>在要加粗的文字两边用<del>两个</del>波浪线包起来</p>
-<figure class="highlight haml"><table><tr><td class="code"><pre><span class="line">~~两个波浪线~~</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="三、引用"><a href="#三、引用" class="headerlink" title="三、引用"></a>三、引用</h2><p>在文字前添加&gt;，可以使用嵌套；</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"> a</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt; b</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; c</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>a</p>
-<blockquote>
-<p>b</p>
-<blockquote>
-<p>c</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><p>三个或者三个以上的 - 或者 * </p>
-<figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line"><span class="bullet">---</span></span><br><span class="line"><span class="bullet"></span><span class="section">***</span></span><br><span class="line"><span class="section">----</span></span><br><span class="line"><span class="strong">*****</span></span><br></pre></td></tr></table></figure>
-<hr>
-<hr>
-<hr>
-<hr>
-<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>我是使用<a href="https://sm.ms/">SM.MS</a>，直接生成模板粘贴使用，效果还不错，就是好像不能够剪切板复制过去的图片重命名后期不方便进行管理；<br><img data-src="https://i.loli.net/2019/10/28/BEu7no2MeHGKFAU.png" alt="image.png"></p>
-<h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><figure class="highlight scheme"><table><tr><td class="code"><pre><span class="line">[<span class="name">链接名字</span>](<span class="name">链接地址</span>)</span><br><span class="line">[<span class="name">mistgun</span><span class="symbol">&#x27;s</span> blog](<span class="name">https://blog.msitgun.net</span>)</span><br></pre></td></tr></table></figure>
-<p><a href="https://blog.msitgun.net/">mistgun’s blog</a></p>
-<h3 id="LOGS"><a href="#LOGS" class="headerlink" title="LOGS"></a>LOGS</h3><p>2019.10.27 溜溜溜，鸽了，下次再补充</p>
-<h3 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h3><p>1.代码<br>2.加粗特殊符号<br>3.我的SM.MS的账号好像丢了·········<br>4.流程图<br>5.表格<br>6.公式<br>7.列表<br>。。。。。  </p>
-]]></content>
-      <categories>
-        <category>建站</category>
-      </categories>
-      <tags>
-        <tag>markdown</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>SSH工具的使用与推荐</title>
     <url>/archives/441bd76c.html</url>
     <content><![CDATA[<p>自从接触了linux肯定被其强大的命令行所折服，不知鼠标为何物。只需要几行代码就能完成window上鼠标的一系列操作。命令的存在给了linux的控制提供了极大的便利性，在远程控制时只需要超小的带宽就能完成。不像win这类系统依托图形化界面才能大部分操作，linux配合云主机和内网穿透，只要能连上局域网就能控制你的linux主机。在谈到远程SSH控制那么将少不了远程的控制工具。</p>
@@ -354,6 +304,56 @@
         <tag>xshekk</tag>
         <tag>MoBaXterm</tag>
         <tag>OpenSSH</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Markdown语法笔记</title>
+    <url>/archives/b60f5572.html</url>
+    <content><![CDATA[<h1 id="Markdown语法笔记"><a href="#Markdown语法笔记" class="headerlink" title="Markdown语法笔记"></a><strong>Markdown语法笔记</strong></h1><p>markdown是一种纯文本格式的标记语言。简单易上手，但还是敌不过久了没写，总是忘记语法。</p>
+<span id="more"></span>
+
+<h2 id="一、标题"><a href="#一、标题" class="headerlink" title="一、标题"></a>一、标题</h2><p>通过<strong>井号的个数</strong>来判断标题级数。最高支持六级！<br>需要注意的是#后需要添加空格； </p>
+<figure class="highlight clean"><table><tr><td class="code"><pre><span class="line">## 这是二级标题</span><br></pre></td></tr></table></figure>
+<h2 id="这是二级标题"><a href="#这是二级标题" class="headerlink" title="这是二级标题"></a>这是二级标题</h2><h2 id="二、字体"><a href="#二、字体" class="headerlink" title="二、字体"></a>二、字体</h2><ul>
+<li><h3 id="加粗"><a href="#加粗" class="headerlink" title="加粗"></a><strong>加粗</strong></h3>在要加粗的文字两边用<strong>两个</strong>星号包起来<figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line"><span class="strong">**两个星号**</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<ul>
+<li><h3 id="斜体"><a href="#斜体" class="headerlink" title="斜体"></a><em>斜体</em></h3>在要加粗的文字两边用<strong>一个</strong>星号包起来<figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line"><span class="strong">*一个星号*</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<ul>
+<li><h3 id="斜体加粗"><a href="#斜体加粗" class="headerlink" title="斜体加粗"></a><em><strong>斜体加粗</strong></em></h3><p>在要加粗的文字两边用<em><strong>三个</strong></em>星号包起来</p>
+<figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line"><span class="strong">***三个星号**</span>*</span><br></pre></td></tr></table></figure></li>
+<li><h3 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a><del>删除线</del></h3><p>在要加粗的文字两边用<del>两个</del>波浪线包起来</p>
+<figure class="highlight haml"><table><tr><td class="code"><pre><span class="line">~~两个波浪线~~</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="三、引用"><a href="#三、引用" class="headerlink" title="三、引用"></a>三、引用</h2><p>在文字前添加&gt;，可以使用嵌套；</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"> a</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt; b</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; c</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>a</p>
+<blockquote>
+<p>b</p>
+<blockquote>
+<p>c</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><p>三个或者三个以上的 - 或者 * </p>
+<figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line"><span class="bullet">---</span></span><br><span class="line"><span class="bullet"></span><span class="section">***</span></span><br><span class="line"><span class="section">----</span></span><br><span class="line"><span class="strong">*****</span></span><br></pre></td></tr></table></figure>
+<hr>
+<hr>
+<hr>
+<hr>
+<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>我是使用<a href="https://sm.ms/">SM.MS</a>，直接生成模板粘贴使用，效果还不错，就是好像不能够剪切板复制过去的图片重命名后期不方便进行管理；<br><img data-src="https://i.loli.net/2019/10/28/BEu7no2MeHGKFAU.png" alt="image.png"></p>
+<h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><figure class="highlight scheme"><table><tr><td class="code"><pre><span class="line">[<span class="name">链接名字</span>](<span class="name">链接地址</span>)</span><br><span class="line">[<span class="name">mistgun</span><span class="symbol">&#x27;s</span> blog](<span class="name">https://blog.msitgun.net</span>)</span><br></pre></td></tr></table></figure>
+<p><a href="https://blog.msitgun.net/">mistgun’s blog</a></p>
+<h3 id="LOGS"><a href="#LOGS" class="headerlink" title="LOGS"></a>LOGS</h3><p>2019.10.27 溜溜溜，鸽了，下次再补充</p>
+<h3 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h3><p>1.代码<br>2.加粗特殊符号<br>3.我的SM.MS的账号好像丢了·········<br>4.流程图<br>5.表格<br>6.公式<br>7.列表<br>。。。。。  </p>
+]]></content>
+      <categories>
+        <category>建站</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
       </tags>
   </entry>
   <entry>
