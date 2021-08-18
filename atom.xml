@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Marques&#39; Blog</title>
-  <icon>http://blog.marques22.com/icon.png</icon>
+  <icon>https://blog.marques22.com/icon.png</icon>
   <subtitle>随缘更新</subtitle>
-  <link href="http://blog.marques22.com/atom.xml" rel="self"/>
+  <link href="https://blog.marques22.com/atom.xml" rel="self"/>
   
-  <link href="http://blog.marques22.com/"/>
+  <link href="https://blog.marques22.com/"/>
   <updated>2021-08-18T05:37:42.704Z</updated>
-  <id>http://blog.marques22.com/</id>
+  <id>https://blog.marques22.com/</id>
   
   <author>
     <name>Marques</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>2019泰迪杯数据分析技能赛B题心得 </title>
-    <link href="http://blog.marques22.com/archives/d19c3d76.html"/>
-    <id>http://blog.marques22.com/archives/d19c3d76.html</id>
+    <link href="https://blog.marques22.com/archives/d19c3d76.html"/>
+    <id>https://blog.marques22.com/archives/d19c3d76.html</id>
     <published>2020-09-15T14:21:00.000Z</published>
     <updated>2021-08-18T05:37:42.704Z</updated>
     
@@ -29,16 +29,16 @@
     
     
     
-    <category term="泰迪杯" scheme="http://blog.marques22.com/tags/%E6%B3%B0%E8%BF%AA%E6%9D%AF/"/>
+    <category term="泰迪杯" scheme="https://blog.marques22.com/tags/%E6%B3%B0%E8%BF%AA%E6%9D%AF/"/>
     
-    <category term="数据分析" scheme="http://blog.marques22.com/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    <category term="数据分析" scheme="https://blog.marques22.com/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
   </entry>
   
   <entry>
     <title>Git简单使用</title>
-    <link href="http://blog.marques22.com/archives/e39d07fb.html"/>
-    <id>http://blog.marques22.com/archives/e39d07fb.html</id>
+    <link href="https://blog.marques22.com/archives/e39d07fb.html"/>
+    <id>https://blog.marques22.com/archives/e39d07fb.html</id>
     <published>2020-04-05T13:09:00.000Z</published>
     <updated>2021-08-18T05:37:57.703Z</updated>
     
@@ -47,17 +47,17 @@
     
     
     
-    <category term="编程工具" scheme="http://blog.marques22.com/categories/%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7/"/>
+    <category term="编程工具" scheme="https://blog.marques22.com/categories/%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7/"/>
     
     
-    <category term="Git" scheme="http://blog.marques22.com/tags/Git/"/>
+    <category term="Git" scheme="https://blog.marques22.com/tags/Git/"/>
     
   </entry>
   
   <entry>
     <title>SSH工具的使用与推荐</title>
-    <link href="http://blog.marques22.com/archives/441bd76c.html"/>
-    <id>http://blog.marques22.com/archives/441bd76c.html</id>
+    <link href="https://blog.marques22.com/archives/441bd76c.html"/>
+    <id>https://blog.marques22.com/archives/441bd76c.html</id>
     <published>2020-04-02T13:24:00.000Z</published>
     <updated>2021-08-18T05:37:45.655Z</updated>
     
@@ -66,25 +66,25 @@
     
     
     
-    <category term="Linux" scheme="http://blog.marques22.com/categories/Linux/"/>
+    <category term="Linux" scheme="https://blog.marques22.com/categories/Linux/"/>
     
     
-    <category term="linux" scheme="http://blog.marques22.com/tags/linux/"/>
+    <category term="linux" scheme="https://blog.marques22.com/tags/linux/"/>
     
-    <category term="SSH" scheme="http://blog.marques22.com/tags/SSH/"/>
+    <category term="SSH" scheme="https://blog.marques22.com/tags/SSH/"/>
     
-    <category term="xshekk" scheme="http://blog.marques22.com/tags/xshekk/"/>
+    <category term="xshekk" scheme="https://blog.marques22.com/tags/xshekk/"/>
     
-    <category term="MoBaXterm" scheme="http://blog.marques22.com/tags/MoBaXterm/"/>
+    <category term="MoBaXterm" scheme="https://blog.marques22.com/tags/MoBaXterm/"/>
     
-    <category term="OpenSSH" scheme="http://blog.marques22.com/tags/OpenSSH/"/>
+    <category term="OpenSSH" scheme="https://blog.marques22.com/tags/OpenSSH/"/>
     
   </entry>
   
   <entry>
     <title>git的安装</title>
-    <link href="http://blog.marques22.com/archives/c9ac0fa7.html"/>
-    <id>http://blog.marques22.com/archives/c9ac0fa7.html</id>
+    <link href="https://blog.marques22.com/archives/c9ac0fa7.html"/>
+    <id>https://blog.marques22.com/archives/c9ac0fa7.html</id>
     <published>2020-03-30T14:31:00.000Z</published>
     <updated>2021-08-18T05:37:59.774Z</updated>
     
@@ -93,17 +93,17 @@
     
     
     
-    <category term="编程工具" scheme="http://blog.marques22.com/categories/%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7/"/>
+    <category term="编程工具" scheme="https://blog.marques22.com/categories/%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7/"/>
     
     
-    <category term="git" scheme="http://blog.marques22.com/tags/git/"/>
+    <category term="git" scheme="https://blog.marques22.com/tags/git/"/>
     
   </entry>
   
   <entry>
     <title>Markdown语法笔记</title>
-    <link href="http://blog.marques22.com/archives/b60f5572.html"/>
-    <id>http://blog.marques22.com/archives/b60f5572.html</id>
+    <link href="https://blog.marques22.com/archives/b60f5572.html"/>
+    <id>https://blog.marques22.com/archives/b60f5572.html</id>
     <published>2020-03-30T14:29:00.000Z</published>
     <updated>2021-08-18T05:37:47.739Z</updated>
     
@@ -112,17 +112,17 @@
     
     
     
-    <category term="建站" scheme="http://blog.marques22.com/categories/%E5%BB%BA%E7%AB%99/"/>
+    <category term="建站" scheme="https://blog.marques22.com/categories/%E5%BB%BA%E7%AB%99/"/>
     
     
-    <category term="markdown" scheme="http://blog.marques22.com/tags/markdown/"/>
+    <category term="markdown" scheme="https://blog.marques22.com/tags/markdown/"/>
     
   </entry>
   
   <entry>
     <title>hexo填坑之旅——持续更新</title>
-    <link href="http://blog.marques22.com/archives/e74ebdad.html"/>
-    <id>http://blog.marques22.com/archives/e74ebdad.html</id>
+    <link href="https://blog.marques22.com/archives/e74ebdad.html"/>
+    <id>https://blog.marques22.com/archives/e74ebdad.html</id>
     <published>2020-03-30T14:28:00.000Z</published>
     <updated>2021-08-18T05:37:51.900Z</updated>
     
@@ -131,19 +131,19 @@
     
     
     
-    <category term="建站" scheme="http://blog.marques22.com/categories/%E5%BB%BA%E7%AB%99/"/>
+    <category term="建站" scheme="https://blog.marques22.com/categories/%E5%BB%BA%E7%AB%99/"/>
     
     
-    <category term="hexo" scheme="http://blog.marques22.com/tags/hexo/"/>
+    <category term="hexo" scheme="https://blog.marques22.com/tags/hexo/"/>
     
-    <category term="atom" scheme="http://blog.marques22.com/tags/atom/"/>
+    <category term="atom" scheme="https://blog.marques22.com/tags/atom/"/>
     
   </entry>
   
   <entry>
     <title>Windows10 LTSC 使用照片查看器</title>
-    <link href="http://blog.marques22.com/archives/b9b5d2fc.html"/>
-    <id>http://blog.marques22.com/archives/b9b5d2fc.html</id>
+    <link href="https://blog.marques22.com/archives/b9b5d2fc.html"/>
+    <id>https://blog.marques22.com/archives/b9b5d2fc.html</id>
     <published>2020-03-30T14:27:00.000Z</published>
     <updated>2021-08-18T05:37:37.376Z</updated>
     
@@ -153,19 +153,19 @@
     
     
     
-    <category term="Windows" scheme="http://blog.marques22.com/categories/Windows/"/>
+    <category term="Windows" scheme="https://blog.marques22.com/categories/Windows/"/>
     
     
-    <category term="LTSC" scheme="http://blog.marques22.com/tags/LTSC/"/>
+    <category term="LTSC" scheme="https://blog.marques22.com/tags/LTSC/"/>
     
-    <category term="电脑优化" scheme="http://blog.marques22.com/tags/%E7%94%B5%E8%84%91%E4%BC%98%E5%8C%96/"/>
+    <category term="电脑优化" scheme="https://blog.marques22.com/tags/%E7%94%B5%E8%84%91%E4%BC%98%E5%8C%96/"/>
     
   </entry>
   
   <entry>
     <title>frp实现内网穿透</title>
-    <link href="http://blog.marques22.com/archives/f51df9f4.html"/>
-    <id>http://blog.marques22.com/archives/f51df9f4.html</id>
+    <link href="https://blog.marques22.com/archives/f51df9f4.html"/>
+    <id>https://blog.marques22.com/archives/f51df9f4.html</id>
     <published>2020-03-30T14:25:00.000Z</published>
     <updated>2021-08-18T05:38:03.353Z</updated>
     
@@ -174,21 +174,21 @@
     
     
     
-    <category term="内网穿透" scheme="http://blog.marques22.com/categories/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/"/>
+    <category term="内网穿透" scheme="https://blog.marques22.com/categories/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/"/>
     
     
-    <category term="frp" scheme="http://blog.marques22.com/tags/frp/"/>
+    <category term="frp" scheme="https://blog.marques22.com/tags/frp/"/>
     
-    <category term="ubuntu" scheme="http://blog.marques22.com/tags/ubuntu/"/>
+    <category term="ubuntu" scheme="https://blog.marques22.com/tags/ubuntu/"/>
     
-    <category term="linux" scheme="http://blog.marques22.com/tags/linux/"/>
+    <category term="linux" scheme="https://blog.marques22.com/tags/linux/"/>
     
   </entry>
   
   <entry>
     <title>记第一次搭建博客遇到的问题</title>
-    <link href="http://blog.marques22.com/archives/91185781.html"/>
-    <id>http://blog.marques22.com/archives/91185781.html</id>
+    <link href="https://blog.marques22.com/archives/91185781.html"/>
+    <id>https://blog.marques22.com/archives/91185781.html</id>
     <published>2020-03-30T14:22:00.000Z</published>
     <updated>2021-08-18T05:37:54.308Z</updated>
     
@@ -197,10 +197,10 @@
     
     
     
-    <category term="建站" scheme="http://blog.marques22.com/categories/%E5%BB%BA%E7%AB%99/"/>
+    <category term="建站" scheme="https://blog.marques22.com/categories/%E5%BB%BA%E7%AB%99/"/>
     
     
-    <category term="hexo" scheme="http://blog.marques22.com/tags/hexo/"/>
+    <category term="hexo" scheme="https://blog.marques22.com/tags/hexo/"/>
     
   </entry>
   
