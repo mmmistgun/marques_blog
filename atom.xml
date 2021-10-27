@@ -6,7 +6,7 @@
   <link href="https://blog.marques22.com/atom.xml" rel="self"/>
   
   <link href="https://blog.marques22.com/"/>
-  <updated>2021-10-27T07:49:00.918Z</updated>
+  <updated>2021-10-27T08:21:28.452Z</updated>
   <id>https://blog.marques22.com/</id>
   
   <author>
@@ -17,14 +17,22 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>jupyterlab</title>
+    <title>Jupyter-lab 3.0 安装、配置并选择虚拟环境开机启动</title>
     <link href="https://blog.marques22.com/archives/d41bc916.html"/>
     <id>https://blog.marques22.com/archives/d41bc916.html</id>
     <published>2021-10-27T07:37:27.000Z</published>
-    <updated>2021-10-27T07:49:00.918Z</updated>
+    <updated>2021-10-27T08:21:28.452Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;Jupyter-lab-3-0-安装、配置并选择虚拟环境开机启动&quot;&gt;&lt;a href=&quot;#Jupyter-lab-3-0-安装、配置并选择虚拟环境开机启动&quot; class=&quot;headerlink&quot; title=&quot;Jupyter-lab 3.0 安装、配置并选择虚拟环境开机启动&quot;&gt;&lt;/a&gt;Jupyter-lab 3.0 安装、配置并选择虚拟环境开机启动&lt;/h1&gt;</summary>
+      
+      
+        
+        
+    <summary type="html">&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;
+
+&lt;h2 id=&quot;1-安装jupyter-lab3-0&quot;&gt;&lt;a href=&quot;#1-安装jupyter-lab3-0&quot; class=&quot;headerlink&quot; title=&quot;1. 安装jupyter-lab3.0&quot;&gt;&lt;/a&gt;1.</summary>
+        
+      
     
     
     
