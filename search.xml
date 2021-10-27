@@ -1,40 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>记第一次搭建博客遇到的问题</title>
-    <url>/archives/91185781.html</url>
-    <content><![CDATA[<h1 id="前记"><a href="#前记" class="headerlink" title="前记"></a>前记</h1><p>刚好在周末放松一下，加上最近在阿里云搞了个学生机，就想搭建个博客玩一下，后续会不会写，看看再说，看看自己会不会用这个平台记录下自己的学习之路。<br>因为没有过搭建博客的经验，所以有点坎坷，两天时间才得以搭建完成，还没有算上界面的优化设置。参考了很多大佬们的教程，但无奈自己还是跳进了很多的坑。在这里记一下，避免下次再跳吧···</p>
-<span id="more"></span>
-<p>原本我是打算在阿里目前手头上的资源，一台阿里云的学生机，一个域名，一个github。</p>
-<h1 id="败走Ubuntu"><a href="#败走Ubuntu" class="headerlink" title="败走Ubuntu"></a>败走Ubuntu</h1><p>最近在搞FRP内网穿透，所以在阿里上注册了一个学生机，搭载了Ubuntu16.04，只用作frp的话实在是太浪费了，所以打算在上面搭建个博客，在网上找了一圈的教程，最终决定使用hexo，这个轻量，高逼格的博客工具，加上中文文档，感觉还算友好。</p>
-<h2 id="坑1-Github的设置"><a href="#坑1-Github的设置" class="headerlink" title="坑1 Github的设置"></a>坑1 Github的设置</h2><p>看了一堆教程后决定利用Github这个平台来存放静态网页，摆脱阿里云学生机1M带宽的束缚，此时就需要的在阿里云学生机上生成密钥来完成代码提交的认证操作。</p>
-<h3 id="细节1-检查邮箱和名字有没有输入正确"><a href="#细节1-检查邮箱和名字有没有输入正确" class="headerlink" title="细节1 检查邮箱和名字有没有输入正确"></a>细节1 检查邮箱和名字有没有输入正确</h3><p>在教程中有这么一句($不用复制，否则会报错)</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$ git config  --<span class="built_in">global</span>  user.name  <span class="string">&quot;your name&quot;</span></span><br><span class="line">$ git config  --<span class="built_in">global</span>  user.email  <span class="string">&quot;your_email@youremail.com&quot;</span></span><br></pre></td></tr></table></figure>
-<p>在实际操作，我并没有去探究到底要不要引号，所以我也不知道自己的格式有没有输入错误，所以可以用一下指令去检查自己有没有输入正确</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">cat ~/.gitconfig</span><br></pre></td></tr></table></figure>
-<p>如果输入正确将得到类似于下文的结果<br><img data-src="https://i.loli.net/2019/08/06/1YFhwJ9BzE7emyV.png" width=400></p>
-<h3 id="细节2-分清公钥与私钥"><a href="#细节2-分清公钥与私钥" class="headerlink" title="细节2 分清公钥与私钥"></a>细节2 分清公钥与私钥</h3><p>在使用命令</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;你的邮箱(不用引号)&quot;</span></span><br></pre></td></tr></table></figure>
-<p>生成私钥和公钥时，如果使用默认命令，即全部回车，Ubuntu将会在<code>/root/.ssh</code>下生成这两个文件<code>id_rsa</code>和<code>id_rsa.pub</code><br>其中私钥：<code>id_rsa</code>将以下面的字段开头和结尾</p>
-<blockquote>
-<p>—–BEGIN RSA PRIVATE KEY—–<br>私钥内容<br>—–END RSA PRIVATE KEY—–</p>
-</blockquote>
-<p>而公钥：<code>id_rsa.pub</code>将以下面的字段开头</p>
-<blockquote>
-<p>ssh-rsa 公钥内容</p>
-</blockquote>
-<p>以你之前设置的名字和邮箱结尾<br>需要配置到Github的是<strong>公钥</strong>！！！——–来自一个小白的呐喊</p>
-<p>因为上述的粗心，让我放弃了在Linux系统上搭建hexo的想法。<br>不过现在多亏了GitHub可以让我在多个环境下拷贝我的hexo备份，有朝一日会再次尝试在Linux上搭建。</p>
-<h1 id="初试Windows"><a href="#初试Windows" class="headerlink" title="初试Windows"></a>初试Windows</h1><p>在吃饭摸鱼的时候看到了一篇在Windows上搭建hexo的文章，所以决定动手尝试。<br>就是这一篇👉 <a href="https://blog.csdn.net/qq_27754983/article/details/76143478">Windows下，Hexo+GitHub搭建博客</a><br>详细的阐述了如何在Windows上搭建hexo博客。写的十分详细，所以就这样吧····继续去调界面了。</p>
-]]></content>
-      <categories>
-        <category>建站</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>frp实现内网穿透</title>
     <url>/archives/f51df9f4.html</url>
     <content><![CDATA[<h1 id="frp实现内网穿透-最简配置"><a href="#frp实现内网穿透-最简配置" class="headerlink" title="frp实现内网穿透 最简配置"></a><strong>frp实现内网穿透 最简配置</strong></h1><p>内网环境现在可以说非常的普遍，如果连接控制的内网环境设备的话，就变得非常不方便，像端口映射，dmz主机已经不能满足我们的要。不过好在现在实现内网穿透的工具也很多，在这里就记录下一这款配置简单，功能强大的内网穿透工具FRP的配置实战。</p>
@@ -204,87 +170,69 @@
       </tags>
   </entry>
   <entry>
-    <title>2019泰迪杯数据分析技能赛B题心得 </title>
-    <url>/archives/d19c3d76.html</url>
-    <content><![CDATA[<h1 id="2019泰迪杯数据分析技能赛B题心得"><a href="#2019泰迪杯数据分析技能赛B题心得" class="headerlink" title="2019泰迪杯数据分析技能赛B题心得"></a>2019泰迪杯数据分析技能赛B题心得</h1><p> 虽说泰迪杯技能赛不太热门，但想要拿奖还是要花点时间。全称是<a href="https://www.tipdm.org/bdrace/jljingsai/">泰迪杯数据分析职业技能大赛</a>。重点在于数据处理与分析，比的是数据的洞察力和敏感程度。再辅以编程基础与搜索能力完成比赛。 </p>
+    <title>记第一次搭建博客遇到的问题</title>
+    <url>/archives/91185781.html</url>
+    <content><![CDATA[<h1 id="前记"><a href="#前记" class="headerlink" title="前记"></a>前记</h1><p>刚好在周末放松一下，加上最近在阿里云搞了个学生机，就想搭建个博客玩一下，后续会不会写，看看再说，看看自己会不会用这个平台记录下自己的学习之路。<br>因为没有过搭建博客的经验，所以有点坎坷，两天时间才得以搭建完成，还没有算上界面的优化设置。参考了很多大佬们的教程，但无奈自己还是跳进了很多的坑。在这里记一下，避免下次再跳吧···</p>
 <span id="more"></span>
-
-<p>在2019年，两道题分别是超市销售分析和校园卡消费分析。前者只可以通过编程解决，使用excel会扣分。但是我们可以通过excel来验证我们的想法，并将excel操作通过代码来实现。后者可以通过官方提供的数据分析工具解决也可以通过编程解决。但去年B题官方一边比赛，一边对其工具进行debug，体验不太友好。  </p>
-<p>要想获奖还要关注官方的线上辅导直播，特别是赛前的那几次。一般会明确赛题的导向和技术要点。比如因为前年技能赛，官方没有考虑到大家爬虫的威力，直接服务器被爬崩了，在去年的赛前直播中就谈到了暂时取消爬虫环节直接提供数据，这样可以减少一些不必要的付出。但是今年可能要注意，官网放出的竞赛内容中提到了数据采集与爬虫技术，以及数据保存。这个结尾再谈。</p>
-<p>下面是我们小组完成A题的思路。<br>语言选择：python<br>使用库：pandas，numpy， matlibplot， wordcloud<br>代码：<br>GitHub：<a href="https://github.com/mmmistgun/Tipdm_Data_Analysis_II">https://github.com/mmmistgun/Tipdm_Data_Analysis_II</a><br>Gitee：<a href="https://gitee.com/mistgun19/Tipdm_Data_Analysis_II">https://gitee.com/mistgun19/Tipdm_Data_Analysis_II</a><br>Gitea：<a href="http://esc.mistgun.cn:3000/marques/Tipdm_Data_Analysis_II">http://esc.mistgun.cn:3000/marques/Tipdm_Data_Analysis_II</a><br>CodeChina: <a href="https://codechina.csdn.net/MISTGUN/tipdm_data_analysis_ii">https://codechina.csdn.net/MISTGUN/tipdm_data_analysis_ii</a></p>
-<h2 id="读取官方数据"><a href="#读取官方数据" class="headerlink" title="读取官方数据"></a>读取官方数据</h2><p>数据特点：</p>
-<ol>
-<li>官方给的是csv文件，使用文本编辑器打开，可以发现其分隔符是“，”逗号，使用文本相关的库打开进行处理是不实际的。后期分离不同的数据操作比较耗时。</li>
-<li>官方给的数据非常庞大，数据有7W多条，每条有9列。  </li>
-</ol>
-<h3 id="方案一-openpyxl库"><a href="#方案一-openpyxl库" class="headerlink" title="方案一 openpyxl库"></a>方案一 openpyxl库</h3><p>这是个适用于读写的excel文件的库，对于数据处理并不友善，读取和处理大数据集时间比较长。</p>
-<h3 id="方案二-pandas库"><a href="#方案二-pandas库" class="headerlink" title="方案二 pandas库"></a>方案二 pandas库</h3><p>Pandas是一个强大的分析结构化数据的工具集；它的使用基础是Numpy（提供高性能的矩阵运算）；用于数据挖掘和数据分析，同时也提供数据清洗功能。</p>
-<h3 id="数据读取方法："><a href="#数据读取方法：" class="headerlink" title="数据读取方法："></a>数据读取方法：</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">data_csv = pd.read_csv(<span class="string">r&quot;../result/附件.csv&quot;</span>, encoding=<span class="string">&#x27;gbk&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;原始数据数量&quot;</span> + <span class="built_in">str</span>(<span class="built_in">len</span>(data_csv)))</span><br></pre></td></tr></table></figure>
-
-<h2 id="数据预处理（数据清洗）"><a href="#数据预处理（数据清洗）" class="headerlink" title="数据预处理（数据清洗）"></a>数据预处理（数据清洗）</h2><p>官方并不会明确要求具体进行哪些预处理操作，到在解题时是必不可少的一步。在进行书写报告时，数据与预处理的每一步，在必要时说明执行的目的，并对步骤的结果进行解释</p>
-<h3 id="数据去重"><a href="#数据去重" class="headerlink" title="数据去重"></a>数据去重</h3><p>目的： 针对所有数据进行数据去重</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># inplace=True 即直接对对象进行修改，否则操作不会保存，将结果返回</span></span><br><span class="line">data_csv.drop_duplicates(inplace=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="去除空值"><a href="#去除空值" class="headerlink" title="去除空值"></a>去除空值</h3><p>目的：哈哈哈顾名思义</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># how = &#x27;any&#x27; 即去除所有的空值</span></span><br><span class="line">data_csv = data_csv.dropna(how=<span class="string">&#x27;any&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="单位标准化"><a href="#单位标准化" class="headerlink" title="单位标准化"></a>单位标准化</h3><p>目的：减小精度对数据处理的干扰，故对数值进行标准化操作，保留五位小数；</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">data_csv[<span class="string">&quot;销售金额&quot;</span>] = data_csv[<span class="string">&quot;销售金额&quot;</span>].<span class="built_in">round</span>(decimals=<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="数据合法性检测"><a href="#数据合法性检测" class="headerlink" title="数据合法性检测"></a>数据合法性检测</h3><ol>
-<li>日期合法性<br>日期进行合法性验证，将日期转化为datetime类型，将非法日期剔除，最后使用去空值操作去除。<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># errors=&#x27;coerce&#x27; 忽略不合法的值，置为null</span></span><br><span class="line">data_csv[<span class="string">&quot;销售日期&quot;</span>] = pd.to_datetime(data_csv[<span class="string">&quot;销售日期&quot;</span>],<span class="built_in">format</span>=<span class="string">&#x27;%Y%m%d&#x27;</span>,errors=<span class="string">&#x27;coerce&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(data_csv.isnull().<span class="built_in">sum</span>())</span><br><span class="line">    data_csv = data_csv.dropna(how=<span class="string">&#x27;any&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
-</ol>
-<ol start="2">
-<li>验证销售金额、单价和数量<br>目的：销售金额与商品单价、销售数量的等式验证  <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">data_csv_check = data_csv[data_csv[<span class="string">&quot;是否促销&quot;</span>]==<span class="string">&#x27;否&#x27;</span>].<span class="built_in">eval</span>(<span class="string">&#x27;应付减实付 =(商品单价*销售数量 - 销售金额)&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(data_csv_check[data_csv_check[<span class="string">&quot;应付减实付&quot;</span>] &gt; <span class="number">1</span>][<span class="string">&quot;大类名称&quot;</span>].value_counts())</span><br></pre></td></tr></table></figure>
-<img data-src="https://i.loli.net/2020/09/15/E7pxrKX5SJt8DRl.png" alt="结果" height="80%" width="80%">  
-结果解释：首先排除促销商品的干扰，再筛选应付金额与实付金额的差值大于1元的数据有369条，最后通过聚类分析发现，差值大的数据集中在蔬果大类。故推断为超市对保鲜期将到的商品进行降价处理或用户选择附加服务（如：购买塑料袋等），对此部分数据不进行处理。  </li>
-</ol>
-<ol start="3">
-<li>删除商品总额为零的数据  <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">data_csv = data_csv.drop(data_csv[data_csv[<span class="string">&quot;销售金额&quot;</span>] == <span class="number">0</span>].index)</span><br></pre></td></tr></table></figure>
-结果解释：通过筛选发现商品总额为零的商品为联营商品，故选择不进行统计操作，将此部分数据删除。</li>
-</ol>
-<h3 id="异常数据处理"><a href="#异常数据处理" class="headerlink" title="异常数据处理"></a>异常数据处理</h3><p>目的：通过数据筛选发现存在商品单价与销售数量均为负数的数据，且可匹配到商品单价与销售数量均为其相反数的订单。 （在excel比对中发现）   </p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">xiaoshoujine_fushu = data_csv[data_csv[<span class="string">&quot;销售金额&quot;</span>] &lt; <span class="number">0</span>]</span><br><span class="line">xiaoshoushuliang_fushu = data_csv[data_csv[<span class="string">&quot;销售数量&quot;</span>] &lt; <span class="number">0</span>]</span><br><span class="line"><span class="built_in">print</span>((xiaoshoujine_fushu == xiaoshoushuliang_fushu).<span class="built_in">sum</span>())</span><br></pre></td></tr></table></figure>
-<p>结果解释：故推断为用户退货，将此部分数据删除； </p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span> (<span class="built_in">len</span>(xiaoshoushuliang_fushu)):</span><br><span class="line">    data_csv.drop(data_csv[</span><br><span class="line">                        (data_csv[<span class="string">&quot;顾客编号&quot;</span>] == <span class="built_in">list</span>(xiaoshoushuliang_fushu[<span class="string">&quot;顾客编号&quot;</span>])[i]) &amp;</span><br><span class="line">                        (data_csv[<span class="string">&quot;小类名称&quot;</span>] == <span class="built_in">list</span>(xiaoshoushuliang_fushu[<span class="string">&quot;小类名称&quot;</span>])[i]) &amp;</span><br><span class="line">                        (<span class="built_in">abs</span>(data_csv[<span class="string">&quot;销售金额&quot;</span>]) == <span class="built_in">abs</span>(<span class="built_in">list</span>(xiaoshoushuliang_fushu[<span class="string">&quot;销售金额&quot;</span>])[i]))</span><br><span class="line">                    ].index, inplace=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="数据冗余处理"><a href="#数据冗余处理" class="headerlink" title="数据冗余处理"></a>数据冗余处理</h3><p>数据冗余的主要办法是交叉验证</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;去冗余，交叉验证&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(pd.crosstab(data_csv[<span class="string">&#x27;小类编码&#x27;</span>],data_csv[<span class="string">&quot;商品编码&quot;</span>],margins_name=<span class="literal">True</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\n&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(pd.crosstab(data_csv[<span class="string">&#x27;小类编码&#x27;</span>],data_csv[<span class="string">&quot;小类名称&quot;</span>],margins_name=<span class="literal">True</span>))</span><br><span class="line"><span class="built_in">print</span>(pd.crosstab(data_csv[<span class="string">&#x27;中类编码&#x27;</span>],data_csv[<span class="string">&quot;中类名称&quot;</span>],margins_name=<span class="literal">True</span>))</span><br><span class="line"><span class="built_in">print</span>(pd.crosstab(data_csv[<span class="string">&#x27;大类编码&#x27;</span>],data_csv[<span class="string">&quot;大类名称&quot;</span>],margins_name=<span class="literal">True</span>))</span><br><span class="line"></span><br><span class="line">data_csv.to_csv(<span class="string">r&quot;../result/task1_1.csv&quot;</span>, index=<span class="literal">False</span>,index_label=<span class="literal">False</span>,encoding=<span class="string">&#x27;gbk&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;task1_1 completed&quot;</span>)</span><br></pre></td></tr></table></figure>
-<p>结果解释：经过观察数据猜测商品编码与小类编码、小类编码与小类名称、中类编码与中类名称、大类编码与大类名称存在表达相同的特征值的情况。经过交叉验证，发现小类编码与小类名称、中类编码与中类名称、大类编码与大类名称存在表达相同的特征值的情况，商品编码与小类编码不存在表达相同的特征值的情况。</p>
-<h2 id="数据统计"><a href="#数据统计" class="headerlink" title="数据统计"></a>数据统计</h2><p>这一步，官方给出了明确的要求，只要按部就班的照做就好。<br><img data-src="https://i.loli.net/2020/09/15/yhlmiRPCbfSk7Ud.png" alt="赛题任务1" height="80%" width="80%"><br>这道任务用的pandas库的DataFrame的基本操作加以阅读pandas官方文档并理解，即可完成。  </p>
-<ol>
-<li>对于任务1.2编写函数，以“大类名称”字段名为索引，计算各大类商品总的销售金额。  </li>
-<li>对于任务1.3，仍然编写函数，以“中类名称”字段名为索引，将每个中类商品的促销销售金额和非促销销售金额统计进行直接筛选统计保存数据   </li>
-<li>对于任务1.4，生鲜类产品和一般产品的每周销售金额采取根据日期相对应的在一年中的周数打标签，再进行筛选，通过调用数据透视表函数进行销售额累加，最终生成新表；  </li>
-<li>对于任务1.5，编写筛选函数，将每位顾客每月的消费额及消费天数统计，首先按月分组消费数据，再通过程序对各月的顾客编号与销售金额、顾客编号与购买次数建立透视表，最后对数据进行整合保存。   </li>
-</ol>
-<h2 id="数据分析与可视化"><a href="#数据分析与可视化" class="headerlink" title="数据分析与可视化"></a>数据分析与可视化</h2><p>这一步，不仅仅是pandas与numpy库的运用，还有使用matlibplot库进行绘图。<br><img data-src="https://i.loli.net/2020/09/15/4LI9GolaJxsNUkD.png" alt="赛题任务2" height="80%" width="80%">   </p>
-<ol>
-<li>对于任务2.1，首先将数据对商品类型进行筛选分为生鲜类和一般商品类，再使用透视表统计隔日销售额，最后调用相关绘图函数，完成绘图；</li>
-<li>对于任务2.2，首先按销售月份筛选数据，再按照大类名称建立与销售金额的透视表，最后完成绘图；</li>
-<li>对于任务2.3，首先通过是否促销进行数据筛选，再获取当前日期所对应的在一年之中对应的周数，分别建立周数与销售金额的透视表，完成绘图；</li>
-</ol>
-<h2 id="用户画像与策略"><a href="#用户画像与策略" class="headerlink" title="用户画像与策略"></a>用户画像与策略</h2><p>用户画像我们使用了wordcloud词云进行绘制虽然不够美观但是表示还是清晰的<br><img data-src="https://i.loli.net/2020/09/15/tkSGU63l8RfpZTP.png" alt="赛题任务3" height="80%" width="80%">   </p>
-<ol>
-<li>对于任务3.1，以顾客编号为筛选条件，对用户消费金额获取透视表，并进行排序取前10名顾客的用户编号，再获取这十名顾客的消费详情，根据金额绘制用户画像，根据消费金额比重绘制用户画像，总体上均可看出一个消费者的消费喜好。</li>
-<li>对于任务3.2，根据各大类名对数据进行筛选，具体为获取总表DataFrame的各大类名然后去重获取不同类名；然后根据类名对数据进行分割，获取各个类对应的数据。最后对每个类每天各自的每日销售量和销售总额分别进行进行汇总得到新的数据源。根据新数据源进行绘图。</li>
-<li>对于任务3.3，以大类名称为标签索引，通过计算促销商品的日均销售额（促销商品总额/进行促销的总天数）与非促销商品的日均销售额（非促销商品总额/进行促销的总天数）得出他们的柱状对比图。</li>
-</ol>
-<h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><p>如果有哪里没写对，没写好的地方，欢迎提出，一起探讨。对于后面几道主观题的结果还是不进行分享了。主要分享一下解题的思路，说不定大家有更好的答案，题目、每个任务的代码、过程数据和结果放在了开头的代码仓库。这次技能赛，虽说没能到达最后的答辩，争取泰迪杯。但是在赛前一天就速通pandas和numpy的各种函数与操作，比赛当天一起百度，查库函数的官方文档，还能拿到一等，回想起来还是很刺激。感谢波神和昌洲大佬。合作愉快^_^!</p>
-<h2 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h2><p>今年似乎爬虫又回归了，根据参加第一届数据挖掘比赛的同学和师兄回忆，第一届的时候，官方给出的是一个的网站，大家需要自行编写爬虫，爬取所需要的信息。也可以自己额外爬取其他网站增加数据。从我第一感觉上来说，理论上是应该不会有反爬的操作，要不然这比赛也太刺激了吧。要自行编写爬虫，这就意味着参赛的同学，要对网页结构有初步的理解。这个可以百度下html了解一下，上手难度不会太大。按照我以往的编写爬虫经验，给出一些的好用的库参考下吧。  </p>
-<ol>
-<li><p>方案一： scrapy爬虫框架<br>强大的爬虫框架，功能强大，需要一定的时间上手。最好能理解架构。</p>
-</li>
-<li><p>方案二： requests + BeautifulSoup + 正则表达式<br>这个方案是我最熟悉的一个方案，<br>requests库 负责完成网页请求，获取网页信息。<br>对于反爬，可以加上headers，proxy，cockies等必要信息，控制访问频率，来应对反爬虫，使你的行为更像真实用户<br>在没有反爬虫时或者反爬虫技术失效时，可以采用多进程，提高爬虫效率，不建议对正常运行的网站这么做，会给网站运维和其他访问用户增加压力。一些网站会在网站上添加robots.txt，告知对应的爬虫被允许的权限。当然这也是君子协定哈哈。<br>BeautifulSoup库 负责完成请求结构解析，并以树的形式进行封装，方便用户索引。<br>正则表达式则是在BeautifulSoup库，不好用的时候，直接进行文本匹配，暴力获取的方法。 </p>
-</li>
-<li><p>方案三：八爪鱼采集器<br>一款爬虫软件，一站式服务，不用自己编程，但是有些功能需要人民币才能解决。  </p>
-<img data-src="https://i.loli.net/2020/09/15/Tb3GkEUpQwr7a6X.png" alt="手动滑稽" height="80%" width="80%">  </li>
-</ol>
-<p>对于数据存储这一块，为了简单的话，可以考虑存成csv，或者说excel表格，python自带csv库，写是挺方便的。<br>有能力的话可以考虑数据库，常用的SQL语言也就四句（增删改查）：insert， update， delete， select</p>
+<p>原本我是打算在阿里目前手头上的资源，一台阿里云的学生机，一个域名，一个github。</p>
+<h1 id="败走Ubuntu"><a href="#败走Ubuntu" class="headerlink" title="败走Ubuntu"></a>败走Ubuntu</h1><p>最近在搞FRP内网穿透，所以在阿里上注册了一个学生机，搭载了Ubuntu16.04，只用作frp的话实在是太浪费了，所以打算在上面搭建个博客，在网上找了一圈的教程，最终决定使用hexo，这个轻量，高逼格的博客工具，加上中文文档，感觉还算友好。</p>
+<h2 id="坑1-Github的设置"><a href="#坑1-Github的设置" class="headerlink" title="坑1 Github的设置"></a>坑1 Github的设置</h2><p>看了一堆教程后决定利用Github这个平台来存放静态网页，摆脱阿里云学生机1M带宽的束缚，此时就需要的在阿里云学生机上生成密钥来完成代码提交的认证操作。</p>
+<h3 id="细节1-检查邮箱和名字有没有输入正确"><a href="#细节1-检查邮箱和名字有没有输入正确" class="headerlink" title="细节1 检查邮箱和名字有没有输入正确"></a>细节1 检查邮箱和名字有没有输入正确</h3><p>在教程中有这么一句($不用复制，否则会报错)</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$ git config  --<span class="built_in">global</span>  user.name  <span class="string">&quot;your name&quot;</span></span><br><span class="line">$ git config  --<span class="built_in">global</span>  user.email  <span class="string">&quot;your_email@youremail.com&quot;</span></span><br></pre></td></tr></table></figure>
+<p>在实际操作，我并没有去探究到底要不要引号，所以我也不知道自己的格式有没有输入错误，所以可以用一下指令去检查自己有没有输入正确</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">cat ~/.gitconfig</span><br></pre></td></tr></table></figure>
+<p>如果输入正确将得到类似于下文的结果<br><img data-src="https://i.loli.net/2019/08/06/1YFhwJ9BzE7emyV.png" width=400></p>
+<h3 id="细节2-分清公钥与私钥"><a href="#细节2-分清公钥与私钥" class="headerlink" title="细节2 分清公钥与私钥"></a>细节2 分清公钥与私钥</h3><p>在使用命令</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;你的邮箱(不用引号)&quot;</span></span><br></pre></td></tr></table></figure>
+<p>生成私钥和公钥时，如果使用默认命令，即全部回车，Ubuntu将会在<code>/root/.ssh</code>下生成这两个文件<code>id_rsa</code>和<code>id_rsa.pub</code><br>其中私钥：<code>id_rsa</code>将以下面的字段开头和结尾</p>
+<blockquote>
+<p>—–BEGIN RSA PRIVATE KEY—–<br>私钥内容<br>—–END RSA PRIVATE KEY—–</p>
+</blockquote>
+<p>而公钥：<code>id_rsa.pub</code>将以下面的字段开头</p>
+<blockquote>
+<p>ssh-rsa 公钥内容</p>
+</blockquote>
+<p>以你之前设置的名字和邮箱结尾<br>需要配置到Github的是<strong>公钥</strong>！！！——–来自一个小白的呐喊</p>
+<p>因为上述的粗心，让我放弃了在Linux系统上搭建hexo的想法。<br>不过现在多亏了GitHub可以让我在多个环境下拷贝我的hexo备份，有朝一日会再次尝试在Linux上搭建。</p>
+<h1 id="初试Windows"><a href="#初试Windows" class="headerlink" title="初试Windows"></a>初试Windows</h1><p>在吃饭摸鱼的时候看到了一篇在Windows上搭建hexo的文章，所以决定动手尝试。<br>就是这一篇👉 <a href="https://blog.csdn.net/qq_27754983/article/details/76143478">Windows下，Hexo+GitHub搭建博客</a><br>详细的阐述了如何在Windows上搭建hexo博客。写的十分详细，所以就这样吧····继续去调界面了。</p>
 ]]></content>
+      <categories>
+        <category>建站</category>
+      </categories>
       <tags>
-        <tag>泰迪杯</tag>
-        <tag>数据分析</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo填坑之旅——持续更新</title>
+    <url>/archives/e74ebdad.html</url>
+    <content><![CDATA[<h1 id="持续更新"><a href="#持续更新" class="headerlink" title="持续更新"></a>持续更新</h1><p>休息了几天，闲来无事记录下当初搭建这个博客走过的一些路，掉进的一些坑，避免自己再跳一次。所有遇到问题基本上都还是靠度娘解决的，留下超链接，也给自己的标签栏减轻点压力。</p>
+<span id="more"></span>
+<h1 id="HEXO"><a href="#HEXO" class="headerlink" title="HEXO"></a><strong>HEXO</strong></h1><p>这个博客是利用GitHub的静态网页仓库（不知道这样表述够不够准确）加上hexo轻博客模板，再配上清新简约的next主题搭建的。主要看重的是不需要自己再去配置服务器，直接用自己的Windows就能轻松完成搭建，当然在这之中也花一点时间去琢磨。</p>
+<h2 id="1-分类和标签"><a href="#1-分类和标签" class="headerlink" title="1.分类和标签"></a>1.分类和标签</h2><p>主题是有分类和标签的，但需要自己配置才能够使用，主要依靠以下博客去配置<br><a href="https://blog.csdn.net/Wonz5130/article/details/84666519">解决 Hexo 搭建博客显示不出分类、标签问题</a><br>如果不去配置将会出现点击分类后404的情况。<br><img data-src="https://i.loli.net/2019/08/22/7hrkyeSMoAi5sxC.png" width=400 align=center></p>
+<h2 id="2-导航栏小图标"><a href="#2-导航栏小图标" class="headerlink" title="2.导航栏小图标"></a>2.导航栏小图标</h2><p>如下图所示的Linux和FRP上面的小图标，因为next主题的升级，其配置格式和以往的已经有些不同。<br><img data-src="https://i.loli.net/2019/08/22/VtRs1xlLCwpcE5b.png" width=400></p>
+<p>首先是图标库的网站：<br><a href="http://www.fontawesome.com.cn/faicons/">http://www.fontawesome.com.cn/faicons/</a><br>找到自己需要的图标，记下图标名称  </p>
+<img data-src="https://i.loli.net/2019/08/22/ZwYXo7KpG8JIAeS.png" width=400> 
+
+<p>在主题的配置文件中找到menu</p>
+<img data-src="https://i.loli.net/2019/08/22/aKC3b8sfxeRnDLh.png" wdith =600>
+
+
+<h2 id="3-设置头像"><a href="#3-设置头像" class="headerlink" title="3.设置头像"></a>3.设置头像</h2><p><a href="https://blog.csdn.net/qq_30242609/article/details/53440869">为Hexo-Next主题设置头部图片</a></p>
+<h1 id="ATOM"><a href="#ATOM" class="headerlink" title="ATOM"></a><strong>ATOM</strong></h1><p>。。。。。<strong>未完待续</strong></p>
+<h4 id="更新记录"><a href="#更新记录" class="headerlink" title="更新记录"></a>更新记录</h4><p>20190822： 记录部分hexo遇到的问题，头像设置，导航栏图标和分类标签的设置</p>
+<h4 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h4><ol>
+<li>ATOM的配置： 回车的问题（不同系统之间的回车，中文自动换行）；设置自动保存；插件的安装方法</li>
+<li>图床的选择</li>
+<li>hexo：右上角的GitHub图标，访客与阅读统计（过滤自身的访问需要解决）</li>
+</ol>
+]]></content>
+      <categories>
+        <category>建站</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>atom</tag>
       </tags>
   </entry>
   <entry>
@@ -338,132 +286,11 @@
       </tags>
   </entry>
   <entry>
-    <title>SSH工具的使用与推荐</title>
-    <url>/archives/441bd76c.html</url>
-    <content><![CDATA[<p>自从接触了linux肯定被其强大的命令行所折服，不知鼠标为何物。只需要几行代码就能完成window上鼠标的一系列操作。命令的存在给了linux的控制提供了极大的便利性，在远程控制时只需要超小的带宽就能完成。不像win这类系统依托图形化界面才能大部分操作，linux配合云主机和内网穿透，只要能连上局域网就能控制你的linux主机。在谈到远程SSH控制那么将少不了远程的控制工具。</p>
-<span id="more"></span>
-<h1 id="深度推荐-全能终端神器-MobaXterm"><a href="#深度推荐-全能终端神器-MobaXterm" class="headerlink" title="深度推荐 全能终端神器 MobaXterm"></a>深度推荐 全能终端神器 MobaXterm</h1><p>下载地址：免费版就够用</p>
-<blockquote>
-<p><a href="https://mobaxterm.mobatek.net/download.html">https://mobaxterm.mobatek.net/download.html</a>  </p>
-</blockquote>
-<img data-src="https://i.loli.net/2020/04/02/u1B2wnIAL4RzFSe.png" >
-
-
-<h2 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h2><p>远程连接时一般选择SSH，输入主机的ip即可；<br>ssh端口一般默认为22，当然可以在linux主机上修改。 </p>
-<img data-src="https://i.loli.net/2020/04/02/5spYCnPkVN7vUgo.png" >
-
-<p>相应的输入linux账号和密码，第一次使用会弹出提示，让你设置一个安全密码。<br>mabaXterm有一个功能就是保存你所输入的主机账号密码，下次登陆时只需要输入主机用户名就可以登录；<br><img data-src="https://i.loli.net/2020/04/02/fJA4v1XaqCFlBcx.png" ></p>
-<h2 id="X"><a href="#X" class="headerlink" title="X"></a>X</h2><p>支持X协议。甚至支持RDP和VNC（也是图形远程控制工具）<br><img data-src="https://i.loli.net/2020/04/02/b3F2S5qUEYDjLHt.png" ><br>图中那个突兀的文本编辑器明显就不是win系统的软件。这也就是为什么mobaxterm强大的原因。</p>
-<h2 id="SFTP"><a href="#SFTP" class="headerlink" title="SFTP"></a>SFTP</h2><p>在连接上你的linux主机时还会主动建立SFTP连接，方便文件浏览和传输。（窗口右边）<br>*注意：传输文件时要注意权限和带宽</p>
-<blockquote>
-<p>SFTP:SSH文件传输协议   </p>
-</blockquote>
-<p><a href="https://sm.ms/image/U5XKY8NbHTWfCxQ" target="_blank"><img data-src="https://i.loli.net/2020/04/02/U5XKY8NbHTWfCxQ.png" ></a></p>
-<p>此外在设置中勾选这个功能可以实时查看到主机状态（像CPU，内存、网速等）<br><img data-src="https://i.loli.net/2020/04/02/uPTdifkjYZMBQhF.png" ></p>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>像文本自动上色可以清晰分辨哪些是文件哪些是文件夹，以及文件和文件夹的权限配置；<br>此外还有很多强大的强大的功能就不多赘述了。（我用的少[翻译：我菜]）</p>
-<h1 id="windows自动带的OpenSSH客户端"><a href="#windows自动带的OpenSSH客户端" class="headerlink" title="windows自动带的OpenSSH客户端"></a>windows自动带的OpenSSH客户端</h1><p>使用起来也非常简单，直接在cmd（命令提示符中就可以使用）<br>格式： <code>ssh username@ip</code><br>例如:  <code>ssh josh@192.168.123.6 </code><br><img data-src="https://i.loli.net/2020/04/02/4se1ZFXMAUgOH5r.png" ></p>
-<h1 id="Xshell-6"><a href="#Xshell-6" class="headerlink" title="Xshell 6"></a>Xshell 6</h1><blockquote>
-<p>Xshell是一个强大的安全终端模拟软件，它支持SSH1, SSH2, 以及Microsoft Windows 平台的TELNET 协议。Xshell 通过互联网到远程主机的安全连接以及它创新性的设计和特色帮助用户在复杂的网络环境中享受他们的工作。<br>Xshell可以在Windows界面下用来访问远端不同系统下的服务器，从而比较好的达到远程控制终端的目的。除此之外，其还有丰富的外观配色方案以及样式选择。<br>来自百度百科  </p>
-</blockquote>
-<p>下载地址：</p>
-<blockquote>
-<p><a href="https://www.netsarang.com/zh/free-for-home-school/">https://www.netsarang.com/zh/free-for-home-school/</a>  </p>
-</blockquote>
-<p>填写你的姓名和邮箱，勾选Xshell就可以获得正版软件（对家庭和学生用户免费），他会将下载地址发送至你的邮箱。</p>
-<h2 id="连接-1"><a href="#连接-1" class="headerlink" title="连接"></a>连接</h2><p>1.使用快捷方式，窗口加小加号那个图标；<br>2.点击<code>文件>新建</code><br>可以提前在用户身份认证中输入用户名和密码，也可以在连接后输入<br><img data-src="https://i.loli.net/2020/04/02/kswpo8QUHCLJbZc.png" ></p>
-<h2 id="使用心得"><a href="#使用心得" class="headerlink" title="使用心得"></a>使用心得</h2><h3 id="在安装后切记取消更新"><a href="#在安装后切记取消更新" class="headerlink" title="在安装后切记取消更新"></a>在安装后切记取消更新</h3><p>在<code>工具>选项>更新</code>取消勾选实时更新。不这样做的话，三十天后可能会提醒你体验到期了。<br><img data-src="https://i.loli.net/2020/04/02/NPM2LzWfOdGrBR8.png" ></p>
-<h3 id="在连接linux系统时小键盘失效"><a href="#在连接linux系统时小键盘失效" class="headerlink" title="在连接linux系统时小键盘失效"></a>在连接linux系统时小键盘失效</h3><p>点开当前连接的<code>属性>终端>仿真>终端类型</code>修改为<code>linux</code>小键盘就可以正常使用了。<br><img data-src="https://i.loli.net/2019/08/07/NGtshPACQlv2fYH.png" ></p>
-<p>以上时我常用的三个SSH终端工具，其他类似的工具还有很多就不一一赘述了。</p>
-<h1 id="secureCRT"><a href="#secureCRT" class="headerlink" title="secureCRT"></a>secureCRT</h1><blockquote>
-<p>SecureCRT是一款支持SSH（SSH1和SSH2）的终端仿真程序，简单地说是Windows下登录UNIX或Linux服务器主机的软件。<br>SecureCRT支持SSH，同时支持Telnet和rlogin协议。SecureCRT是一款用于连接运行包括Windows、UNIX和VMS的理想工具。通过使用内含的VCP命令行程序可以进行加密文件的传输。有流行CRTTelnet客户机的所有特点,包括:自动注册、对不同主机保持不同的特性、打印功能、颜色设置、可变屏幕尺寸、用户定义的键位图和优良的VT100,VT102,VT220和ANSI竞争.能从命令行中运行或从浏览器中运行.其它特点包括文本手稿、易于使用的工具条、用户的键位图编辑器、可定制的ANSI颜色等.SecureCRT的SSH协议支持DES,3DES和RC4密码和密码与RSA鉴别。</p>
-</blockquote>
-<p>官网地址：</p>
-<blockquote>
-<p><a href="https://www.vandyke.com/cgi-bin/releases.php?product=securecrt">https://www.vandyke.com/cgi-bin/releases.php?product=securecrt</a></p>
-</blockquote>
-<p>下载地址:</p>
-<blockquote>
-<p><a href="https://www.vandyke.com/cgi-bin/account_login.php?pid=scrt_x64_871">https://www.vandyke.com/cgi-bin/account_login.php?pid=scrt_x64_871</a></p>
-</blockquote>
-<h1 id="PuTTY"><a href="#PuTTY" class="headerlink" title="PuTTY"></a>PuTTY</h1><blockquote>
-<p>PuTTY是一个Telnet、SSH、rlogin、纯TCP以及串行接口连接软件。较早的版本仅支持Windows平台，在最近的版本中开始支持各类Unix平台，并打算移植至Mac OS X上。除了官方版本外，有许多第三方的团体或个人将PuTTY移植到其他平台上，像是以Symbian为基础的移动电话。PuTTY为一开放源代码软件，主要由Simon Tatham维护，使用MIT licence授权。随着Linux在服务器端应用的普及，Linux系统管理越来越依赖于远程。在各种远程登录工具中，Putty是出色的工具之一。Putty是一个免费的、Windows x86平台下的Telnet、SSH和rlogin客户端，但是功能丝毫不逊色于商业的Telnet类工具。最新的版本为 0.72 latest release</p>
-</blockquote>
-<p>官网地址：</p>
-<blockquote>
-<p><a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html</a></p>
-</blockquote>
-<p>下载地址：</p>
-<blockquote>
-<p><a href="https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-0.73-installer.msi">https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-0.73-installer.msi</a></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>SSH</tag>
-        <tag>xshekk</tag>
-        <tag>MoBaXterm</tag>
-        <tag>OpenSSH</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo填坑之旅——持续更新</title>
-    <url>/archives/e74ebdad.html</url>
-    <content><![CDATA[<h1 id="持续更新"><a href="#持续更新" class="headerlink" title="持续更新"></a>持续更新</h1><p>休息了几天，闲来无事记录下当初搭建这个博客走过的一些路，掉进的一些坑，避免自己再跳一次。所有遇到问题基本上都还是靠度娘解决的，留下超链接，也给自己的标签栏减轻点压力。</p>
-<span id="more"></span>
-<h1 id="HEXO"><a href="#HEXO" class="headerlink" title="HEXO"></a><strong>HEXO</strong></h1><p>这个博客是利用GitHub的静态网页仓库（不知道这样表述够不够准确）加上hexo轻博客模板，再配上清新简约的next主题搭建的。主要看重的是不需要自己再去配置服务器，直接用自己的Windows就能轻松完成搭建，当然在这之中也花一点时间去琢磨。</p>
-<h2 id="1-分类和标签"><a href="#1-分类和标签" class="headerlink" title="1.分类和标签"></a>1.分类和标签</h2><p>主题是有分类和标签的，但需要自己配置才能够使用，主要依靠以下博客去配置<br><a href="https://blog.csdn.net/Wonz5130/article/details/84666519">解决 Hexo 搭建博客显示不出分类、标签问题</a><br>如果不去配置将会出现点击分类后404的情况。<br><img data-src="https://i.loli.net/2019/08/22/7hrkyeSMoAi5sxC.png" width=400 align=center></p>
-<h2 id="2-导航栏小图标"><a href="#2-导航栏小图标" class="headerlink" title="2.导航栏小图标"></a>2.导航栏小图标</h2><p>如下图所示的Linux和FRP上面的小图标，因为next主题的升级，其配置格式和以往的已经有些不同。<br><img data-src="https://i.loli.net/2019/08/22/VtRs1xlLCwpcE5b.png" width=400></p>
-<p>首先是图标库的网站：<br><a href="http://www.fontawesome.com.cn/faicons/">http://www.fontawesome.com.cn/faicons/</a><br>找到自己需要的图标，记下图标名称  </p>
-<img data-src="https://i.loli.net/2019/08/22/ZwYXo7KpG8JIAeS.png" width=400> 
-
-<p>在主题的配置文件中找到menu</p>
-<img data-src="https://i.loli.net/2019/08/22/aKC3b8sfxeRnDLh.png" wdith =600>
-
-
-<h2 id="3-设置头像"><a href="#3-设置头像" class="headerlink" title="3.设置头像"></a>3.设置头像</h2><p><a href="https://blog.csdn.net/qq_30242609/article/details/53440869">为Hexo-Next主题设置头部图片</a></p>
-<h1 id="ATOM"><a href="#ATOM" class="headerlink" title="ATOM"></a><strong>ATOM</strong></h1><p>。。。。。<strong>未完待续</strong></p>
-<h4 id="更新记录"><a href="#更新记录" class="headerlink" title="更新记录"></a>更新记录</h4><p>20190822： 记录部分hexo遇到的问题，头像设置，导航栏图标和分类标签的设置</p>
-<h4 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h4><ol>
-<li>ATOM的配置： 回车的问题（不同系统之间的回车，中文自动换行）；设置自动保存；插件的安装方法</li>
-<li>图床的选择</li>
-<li>hexo：右上角的GitHub图标，访客与阅读统计（过滤自身的访问需要解决）</li>
-</ol>
-]]></content>
-      <categories>
-        <category>建站</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>atom</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Windows10 LTSC 使用照片查看器</title>
-    <url>/archives/b9b5d2fc.html</url>
-    <content><![CDATA[<h1 id="Windows10-LTSC-使用照片查看器"><a href="#Windows10-LTSC-使用照片查看器" class="headerlink" title="Windows10 LTSC 使用照片查看器"></a>Windows10 LTSC 使用照片查看器</h1><p>之前看网上说老坛酸菜（LTSC）版本的Windows10，比较稳定，不会很多更新，而且还有专业版的功能。所以抱着好奇的心态就安装了一个。安装完就知错了呀···这没有应用商店，没有照片查看器，连便笺也没有。能咋办，安装呗···可是就在照片查看器这里卡住了，网上花里胡哨的照片查看器，不是插广告就是体积臃肿。</p>
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>在网上找了一圈，基本上都是要下载应用商店再来下载Windows10自带的照片查看器，尝试了几个无效后，终于找到了一个不用下载就可以解决的办法。就是Windows10 自带Windows 7带的照片查看器，而且只要几行命令提示符就能解决。</p>
-<span id="more"></span>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>在一个<a href="http://bbs.pcbeta.com/forum.php?mod=viewthread&tid=1808513&highlight=">论坛的帖子七楼</a>里找到了这个解决方案就是</p>
-<figure class="highlight taggerscript"><table><tr><td class="code"><pre><span class="line">以管理员身份运行命令提示符</span><br><span class="line"></span><br><span class="line">FTYPE Paint.Picture=<span class="variable">%SystemRoot%</span><span class="symbol">\S</span>ystem32<span class="symbol">\r</span>undll32.exe &quot;<span class="variable">%ProgramFiles%</span><span class="symbol">\W</span>indows Photo Viewer<span class="symbol">\P</span>hotoViewer.dll&quot;, ImageView_Fullscreen <span class="variable">%1</span></span><br><span class="line"><span class="variable">FTYPE jpegfile=%</span>SystemRoot<span class="variable">%\System32\rundll32.exe &quot;%</span>ProgramFiles<span class="variable">%\Windows Photo Viewer\PhotoViewer.dll&quot;, ImageView_Fullscreen %</span>1</span><br><span class="line">FTYPE pngfile=<span class="variable">%SystemRoot%</span><span class="symbol">\S</span>ystem32<span class="symbol">\r</span>undll32.exe &quot;<span class="variable">%ProgramFiles%</span><span class="symbol">\W</span>indows Photo Viewer<span class="symbol">\P</span>hotoViewer.dll&quot;, ImageView_Fullscreen <span class="variable">%1</span></span><br></pre></td></tr></table></figure>
-
-<p>就是这么潇洒简单霸气。</p>
-<p><img data-src="https://i.loli.net/2019/08/08/bpNVEIdnyUD8uSz.jpg" alt="windowsphoto.jpg"></p>
-]]></content>
-      <categories>
-        <category>Windows</category>
-      </categories>
-      <tags>
-        <tag>LTSC</tag>
-        <tag>电脑优化</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>jupyterlab</title>
     <url>/archives/d41bc916.html</url>
-    <content><![CDATA[<h1 id="Jupyter-lab-3-0-安装、配置并选择虚拟环境开机启动"><a href="#Jupyter-lab-3-0-安装、配置并选择虚拟环境开机启动" class="headerlink" title="Jupyter-lab 3.0 安装、配置并选择虚拟环境开机启动"></a>Jupyter-lab 3.0 安装、配置并选择虚拟环境开机启动</h1><h2 id="1-安装jupyter-lab3-0"><a href="#1-安装jupyter-lab3-0" class="headerlink" title="1. 安装jupyter-lab3.0"></a>1. 安装jupyter-lab3.0</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install jupyterlab==3</span><br><span class="line"><span class="comment"># 或者使用conda安装</span></span><br><span class="line"><span class="comment"># conda install -c conda-forge jupyterlab=3</span></span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<h1 id="Jupyter-lab-3-0-安装、配置并选择虚拟环境开机启动"><a href="#Jupyter-lab-3-0-安装、配置并选择虚拟环境开机启动" class="headerlink" title="Jupyter-lab 3.0 安装、配置并选择虚拟环境开机启动"></a>Jupyter-lab 3.0 安装、配置并选择虚拟环境开机启动</h1><!--more--->
+
+<h2 id="1-安装jupyter-lab3-0"><a href="#1-安装jupyter-lab3-0" class="headerlink" title="1. 安装jupyter-lab3.0"></a>1. 安装jupyter-lab3.0</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install jupyterlab==3</span><br><span class="line"><span class="comment"># 或者使用conda安装</span></span><br><span class="line"><span class="comment"># conda install -c conda-forge jupyterlab=3</span></span><br></pre></td></tr></table></figure>
 
 
 
@@ -556,6 +383,181 @@
       </categories>
       <tags>
         <tag>jupyter lab</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SSH工具的使用与推荐</title>
+    <url>/archives/441bd76c.html</url>
+    <content><![CDATA[<p>自从接触了linux肯定被其强大的命令行所折服，不知鼠标为何物。只需要几行代码就能完成window上鼠标的一系列操作。命令的存在给了linux的控制提供了极大的便利性，在远程控制时只需要超小的带宽就能完成。不像win这类系统依托图形化界面才能大部分操作，linux配合云主机和内网穿透，只要能连上局域网就能控制你的linux主机。在谈到远程SSH控制那么将少不了远程的控制工具。</p>
+<span id="more"></span>
+<h1 id="深度推荐-全能终端神器-MobaXterm"><a href="#深度推荐-全能终端神器-MobaXterm" class="headerlink" title="深度推荐 全能终端神器 MobaXterm"></a>深度推荐 全能终端神器 MobaXterm</h1><p>下载地址：免费版就够用</p>
+<blockquote>
+<p><a href="https://mobaxterm.mobatek.net/download.html">https://mobaxterm.mobatek.net/download.html</a>  </p>
+</blockquote>
+<img data-src="https://i.loli.net/2020/04/02/u1B2wnIAL4RzFSe.png" >
+
+
+<h2 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h2><p>远程连接时一般选择SSH，输入主机的ip即可；<br>ssh端口一般默认为22，当然可以在linux主机上修改。 </p>
+<img data-src="https://i.loli.net/2020/04/02/5spYCnPkVN7vUgo.png" >
+
+<p>相应的输入linux账号和密码，第一次使用会弹出提示，让你设置一个安全密码。<br>mabaXterm有一个功能就是保存你所输入的主机账号密码，下次登陆时只需要输入主机用户名就可以登录；<br><img data-src="https://i.loli.net/2020/04/02/fJA4v1XaqCFlBcx.png" ></p>
+<h2 id="X"><a href="#X" class="headerlink" title="X"></a>X</h2><p>支持X协议。甚至支持RDP和VNC（也是图形远程控制工具）<br><img data-src="https://i.loli.net/2020/04/02/b3F2S5qUEYDjLHt.png" ><br>图中那个突兀的文本编辑器明显就不是win系统的软件。这也就是为什么mobaxterm强大的原因。</p>
+<h2 id="SFTP"><a href="#SFTP" class="headerlink" title="SFTP"></a>SFTP</h2><p>在连接上你的linux主机时还会主动建立SFTP连接，方便文件浏览和传输。（窗口右边）<br>*注意：传输文件时要注意权限和带宽</p>
+<blockquote>
+<p>SFTP:SSH文件传输协议   </p>
+</blockquote>
+<p><a href="https://sm.ms/image/U5XKY8NbHTWfCxQ" target="_blank"><img data-src="https://i.loli.net/2020/04/02/U5XKY8NbHTWfCxQ.png" ></a></p>
+<p>此外在设置中勾选这个功能可以实时查看到主机状态（像CPU，内存、网速等）<br><img data-src="https://i.loli.net/2020/04/02/uPTdifkjYZMBQhF.png" ></p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>像文本自动上色可以清晰分辨哪些是文件哪些是文件夹，以及文件和文件夹的权限配置；<br>此外还有很多强大的强大的功能就不多赘述了。（我用的少[翻译：我菜]）</p>
+<h1 id="windows自动带的OpenSSH客户端"><a href="#windows自动带的OpenSSH客户端" class="headerlink" title="windows自动带的OpenSSH客户端"></a>windows自动带的OpenSSH客户端</h1><p>使用起来也非常简单，直接在cmd（命令提示符中就可以使用）<br>格式： <code>ssh username@ip</code><br>例如:  <code>ssh josh@192.168.123.6 </code><br><img data-src="https://i.loli.net/2020/04/02/4se1ZFXMAUgOH5r.png" ></p>
+<h1 id="Xshell-6"><a href="#Xshell-6" class="headerlink" title="Xshell 6"></a>Xshell 6</h1><blockquote>
+<p>Xshell是一个强大的安全终端模拟软件，它支持SSH1, SSH2, 以及Microsoft Windows 平台的TELNET 协议。Xshell 通过互联网到远程主机的安全连接以及它创新性的设计和特色帮助用户在复杂的网络环境中享受他们的工作。<br>Xshell可以在Windows界面下用来访问远端不同系统下的服务器，从而比较好的达到远程控制终端的目的。除此之外，其还有丰富的外观配色方案以及样式选择。<br>来自百度百科  </p>
+</blockquote>
+<p>下载地址：</p>
+<blockquote>
+<p><a href="https://www.netsarang.com/zh/free-for-home-school/">https://www.netsarang.com/zh/free-for-home-school/</a>  </p>
+</blockquote>
+<p>填写你的姓名和邮箱，勾选Xshell就可以获得正版软件（对家庭和学生用户免费），他会将下载地址发送至你的邮箱。</p>
+<h2 id="连接-1"><a href="#连接-1" class="headerlink" title="连接"></a>连接</h2><p>1.使用快捷方式，窗口加小加号那个图标；<br>2.点击<code>文件>新建</code><br>可以提前在用户身份认证中输入用户名和密码，也可以在连接后输入<br><img data-src="https://i.loli.net/2020/04/02/kswpo8QUHCLJbZc.png" ></p>
+<h2 id="使用心得"><a href="#使用心得" class="headerlink" title="使用心得"></a>使用心得</h2><h3 id="在安装后切记取消更新"><a href="#在安装后切记取消更新" class="headerlink" title="在安装后切记取消更新"></a>在安装后切记取消更新</h3><p>在<code>工具>选项>更新</code>取消勾选实时更新。不这样做的话，三十天后可能会提醒你体验到期了。<br><img data-src="https://i.loli.net/2020/04/02/NPM2LzWfOdGrBR8.png" ></p>
+<h3 id="在连接linux系统时小键盘失效"><a href="#在连接linux系统时小键盘失效" class="headerlink" title="在连接linux系统时小键盘失效"></a>在连接linux系统时小键盘失效</h3><p>点开当前连接的<code>属性>终端>仿真>终端类型</code>修改为<code>linux</code>小键盘就可以正常使用了。<br><img data-src="https://i.loli.net/2019/08/07/NGtshPACQlv2fYH.png" ></p>
+<p>以上时我常用的三个SSH终端工具，其他类似的工具还有很多就不一一赘述了。</p>
+<h1 id="secureCRT"><a href="#secureCRT" class="headerlink" title="secureCRT"></a>secureCRT</h1><blockquote>
+<p>SecureCRT是一款支持SSH（SSH1和SSH2）的终端仿真程序，简单地说是Windows下登录UNIX或Linux服务器主机的软件。<br>SecureCRT支持SSH，同时支持Telnet和rlogin协议。SecureCRT是一款用于连接运行包括Windows、UNIX和VMS的理想工具。通过使用内含的VCP命令行程序可以进行加密文件的传输。有流行CRTTelnet客户机的所有特点,包括:自动注册、对不同主机保持不同的特性、打印功能、颜色设置、可变屏幕尺寸、用户定义的键位图和优良的VT100,VT102,VT220和ANSI竞争.能从命令行中运行或从浏览器中运行.其它特点包括文本手稿、易于使用的工具条、用户的键位图编辑器、可定制的ANSI颜色等.SecureCRT的SSH协议支持DES,3DES和RC4密码和密码与RSA鉴别。</p>
+</blockquote>
+<p>官网地址：</p>
+<blockquote>
+<p><a href="https://www.vandyke.com/cgi-bin/releases.php?product=securecrt">https://www.vandyke.com/cgi-bin/releases.php?product=securecrt</a></p>
+</blockquote>
+<p>下载地址:</p>
+<blockquote>
+<p><a href="https://www.vandyke.com/cgi-bin/account_login.php?pid=scrt_x64_871">https://www.vandyke.com/cgi-bin/account_login.php?pid=scrt_x64_871</a></p>
+</blockquote>
+<h1 id="PuTTY"><a href="#PuTTY" class="headerlink" title="PuTTY"></a>PuTTY</h1><blockquote>
+<p>PuTTY是一个Telnet、SSH、rlogin、纯TCP以及串行接口连接软件。较早的版本仅支持Windows平台，在最近的版本中开始支持各类Unix平台，并打算移植至Mac OS X上。除了官方版本外，有许多第三方的团体或个人将PuTTY移植到其他平台上，像是以Symbian为基础的移动电话。PuTTY为一开放源代码软件，主要由Simon Tatham维护，使用MIT licence授权。随着Linux在服务器端应用的普及，Linux系统管理越来越依赖于远程。在各种远程登录工具中，Putty是出色的工具之一。Putty是一个免费的、Windows x86平台下的Telnet、SSH和rlogin客户端，但是功能丝毫不逊色于商业的Telnet类工具。最新的版本为 0.72 latest release</p>
+</blockquote>
+<p>官网地址：</p>
+<blockquote>
+<p><a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html</a></p>
+</blockquote>
+<p>下载地址：</p>
+<blockquote>
+<p><a href="https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-0.73-installer.msi">https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-0.73-installer.msi</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>SSH</tag>
+        <tag>xshekk</tag>
+        <tag>MoBaXterm</tag>
+        <tag>OpenSSH</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2019泰迪杯数据分析技能赛B题心得 </title>
+    <url>/archives/d19c3d76.html</url>
+    <content><![CDATA[<h1 id="2019泰迪杯数据分析技能赛B题心得"><a href="#2019泰迪杯数据分析技能赛B题心得" class="headerlink" title="2019泰迪杯数据分析技能赛B题心得"></a>2019泰迪杯数据分析技能赛B题心得</h1><p> 虽说泰迪杯技能赛不太热门，但想要拿奖还是要花点时间。全称是<a href="https://www.tipdm.org/bdrace/jljingsai/">泰迪杯数据分析职业技能大赛</a>。重点在于数据处理与分析，比的是数据的洞察力和敏感程度。再辅以编程基础与搜索能力完成比赛。 </p>
+<span id="more"></span>
+
+<p>在2019年，两道题分别是超市销售分析和校园卡消费分析。前者只可以通过编程解决，使用excel会扣分。但是我们可以通过excel来验证我们的想法，并将excel操作通过代码来实现。后者可以通过官方提供的数据分析工具解决也可以通过编程解决。但去年B题官方一边比赛，一边对其工具进行debug，体验不太友好。  </p>
+<p>要想获奖还要关注官方的线上辅导直播，特别是赛前的那几次。一般会明确赛题的导向和技术要点。比如因为前年技能赛，官方没有考虑到大家爬虫的威力，直接服务器被爬崩了，在去年的赛前直播中就谈到了暂时取消爬虫环节直接提供数据，这样可以减少一些不必要的付出。但是今年可能要注意，官网放出的竞赛内容中提到了数据采集与爬虫技术，以及数据保存。这个结尾再谈。</p>
+<p>下面是我们小组完成A题的思路。<br>语言选择：python<br>使用库：pandas，numpy， matlibplot， wordcloud<br>代码：<br>GitHub：<a href="https://github.com/mmmistgun/Tipdm_Data_Analysis_II">https://github.com/mmmistgun/Tipdm_Data_Analysis_II</a><br>Gitee：<a href="https://gitee.com/mistgun19/Tipdm_Data_Analysis_II">https://gitee.com/mistgun19/Tipdm_Data_Analysis_II</a><br>Gitea：<a href="http://esc.mistgun.cn:3000/marques/Tipdm_Data_Analysis_II">http://esc.mistgun.cn:3000/marques/Tipdm_Data_Analysis_II</a><br>CodeChina: <a href="https://codechina.csdn.net/MISTGUN/tipdm_data_analysis_ii">https://codechina.csdn.net/MISTGUN/tipdm_data_analysis_ii</a></p>
+<h2 id="读取官方数据"><a href="#读取官方数据" class="headerlink" title="读取官方数据"></a>读取官方数据</h2><p>数据特点：</p>
+<ol>
+<li>官方给的是csv文件，使用文本编辑器打开，可以发现其分隔符是“，”逗号，使用文本相关的库打开进行处理是不实际的。后期分离不同的数据操作比较耗时。</li>
+<li>官方给的数据非常庞大，数据有7W多条，每条有9列。  </li>
+</ol>
+<h3 id="方案一-openpyxl库"><a href="#方案一-openpyxl库" class="headerlink" title="方案一 openpyxl库"></a>方案一 openpyxl库</h3><p>这是个适用于读写的excel文件的库，对于数据处理并不友善，读取和处理大数据集时间比较长。</p>
+<h3 id="方案二-pandas库"><a href="#方案二-pandas库" class="headerlink" title="方案二 pandas库"></a>方案二 pandas库</h3><p>Pandas是一个强大的分析结构化数据的工具集；它的使用基础是Numpy（提供高性能的矩阵运算）；用于数据挖掘和数据分析，同时也提供数据清洗功能。</p>
+<h3 id="数据读取方法："><a href="#数据读取方法：" class="headerlink" title="数据读取方法："></a>数据读取方法：</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">data_csv = pd.read_csv(<span class="string">r&quot;../result/附件.csv&quot;</span>, encoding=<span class="string">&#x27;gbk&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;原始数据数量&quot;</span> + <span class="built_in">str</span>(<span class="built_in">len</span>(data_csv)))</span><br></pre></td></tr></table></figure>
+
+<h2 id="数据预处理（数据清洗）"><a href="#数据预处理（数据清洗）" class="headerlink" title="数据预处理（数据清洗）"></a>数据预处理（数据清洗）</h2><p>官方并不会明确要求具体进行哪些预处理操作，到在解题时是必不可少的一步。在进行书写报告时，数据与预处理的每一步，在必要时说明执行的目的，并对步骤的结果进行解释</p>
+<h3 id="数据去重"><a href="#数据去重" class="headerlink" title="数据去重"></a>数据去重</h3><p>目的： 针对所有数据进行数据去重</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># inplace=True 即直接对对象进行修改，否则操作不会保存，将结果返回</span></span><br><span class="line">data_csv.drop_duplicates(inplace=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="去除空值"><a href="#去除空值" class="headerlink" title="去除空值"></a>去除空值</h3><p>目的：哈哈哈顾名思义</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># how = &#x27;any&#x27; 即去除所有的空值</span></span><br><span class="line">data_csv = data_csv.dropna(how=<span class="string">&#x27;any&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="单位标准化"><a href="#单位标准化" class="headerlink" title="单位标准化"></a>单位标准化</h3><p>目的：减小精度对数据处理的干扰，故对数值进行标准化操作，保留五位小数；</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">data_csv[<span class="string">&quot;销售金额&quot;</span>] = data_csv[<span class="string">&quot;销售金额&quot;</span>].<span class="built_in">round</span>(decimals=<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="数据合法性检测"><a href="#数据合法性检测" class="headerlink" title="数据合法性检测"></a>数据合法性检测</h3><ol>
+<li>日期合法性<br>日期进行合法性验证，将日期转化为datetime类型，将非法日期剔除，最后使用去空值操作去除。<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># errors=&#x27;coerce&#x27; 忽略不合法的值，置为null</span></span><br><span class="line">data_csv[<span class="string">&quot;销售日期&quot;</span>] = pd.to_datetime(data_csv[<span class="string">&quot;销售日期&quot;</span>],<span class="built_in">format</span>=<span class="string">&#x27;%Y%m%d&#x27;</span>,errors=<span class="string">&#x27;coerce&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(data_csv.isnull().<span class="built_in">sum</span>())</span><br><span class="line">    data_csv = data_csv.dropna(how=<span class="string">&#x27;any&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
+</ol>
+<ol start="2">
+<li>验证销售金额、单价和数量<br>目的：销售金额与商品单价、销售数量的等式验证  <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">data_csv_check = data_csv[data_csv[<span class="string">&quot;是否促销&quot;</span>]==<span class="string">&#x27;否&#x27;</span>].<span class="built_in">eval</span>(<span class="string">&#x27;应付减实付 =(商品单价*销售数量 - 销售金额)&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(data_csv_check[data_csv_check[<span class="string">&quot;应付减实付&quot;</span>] &gt; <span class="number">1</span>][<span class="string">&quot;大类名称&quot;</span>].value_counts())</span><br></pre></td></tr></table></figure>
+<img data-src="https://i.loli.net/2020/09/15/E7pxrKX5SJt8DRl.png" alt="结果" height="80%" width="80%">  
+结果解释：首先排除促销商品的干扰，再筛选应付金额与实付金额的差值大于1元的数据有369条，最后通过聚类分析发现，差值大的数据集中在蔬果大类。故推断为超市对保鲜期将到的商品进行降价处理或用户选择附加服务（如：购买塑料袋等），对此部分数据不进行处理。  </li>
+</ol>
+<ol start="3">
+<li>删除商品总额为零的数据  <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">data_csv = data_csv.drop(data_csv[data_csv[<span class="string">&quot;销售金额&quot;</span>] == <span class="number">0</span>].index)</span><br></pre></td></tr></table></figure>
+结果解释：通过筛选发现商品总额为零的商品为联营商品，故选择不进行统计操作，将此部分数据删除。</li>
+</ol>
+<h3 id="异常数据处理"><a href="#异常数据处理" class="headerlink" title="异常数据处理"></a>异常数据处理</h3><p>目的：通过数据筛选发现存在商品单价与销售数量均为负数的数据，且可匹配到商品单价与销售数量均为其相反数的订单。 （在excel比对中发现）   </p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">xiaoshoujine_fushu = data_csv[data_csv[<span class="string">&quot;销售金额&quot;</span>] &lt; <span class="number">0</span>]</span><br><span class="line">xiaoshoushuliang_fushu = data_csv[data_csv[<span class="string">&quot;销售数量&quot;</span>] &lt; <span class="number">0</span>]</span><br><span class="line"><span class="built_in">print</span>((xiaoshoujine_fushu == xiaoshoushuliang_fushu).<span class="built_in">sum</span>())</span><br></pre></td></tr></table></figure>
+<p>结果解释：故推断为用户退货，将此部分数据删除； </p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span> (<span class="built_in">len</span>(xiaoshoushuliang_fushu)):</span><br><span class="line">    data_csv.drop(data_csv[</span><br><span class="line">                        (data_csv[<span class="string">&quot;顾客编号&quot;</span>] == <span class="built_in">list</span>(xiaoshoushuliang_fushu[<span class="string">&quot;顾客编号&quot;</span>])[i]) &amp;</span><br><span class="line">                        (data_csv[<span class="string">&quot;小类名称&quot;</span>] == <span class="built_in">list</span>(xiaoshoushuliang_fushu[<span class="string">&quot;小类名称&quot;</span>])[i]) &amp;</span><br><span class="line">                        (<span class="built_in">abs</span>(data_csv[<span class="string">&quot;销售金额&quot;</span>]) == <span class="built_in">abs</span>(<span class="built_in">list</span>(xiaoshoushuliang_fushu[<span class="string">&quot;销售金额&quot;</span>])[i]))</span><br><span class="line">                    ].index, inplace=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="数据冗余处理"><a href="#数据冗余处理" class="headerlink" title="数据冗余处理"></a>数据冗余处理</h3><p>数据冗余的主要办法是交叉验证</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;去冗余，交叉验证&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(pd.crosstab(data_csv[<span class="string">&#x27;小类编码&#x27;</span>],data_csv[<span class="string">&quot;商品编码&quot;</span>],margins_name=<span class="literal">True</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\n&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(pd.crosstab(data_csv[<span class="string">&#x27;小类编码&#x27;</span>],data_csv[<span class="string">&quot;小类名称&quot;</span>],margins_name=<span class="literal">True</span>))</span><br><span class="line"><span class="built_in">print</span>(pd.crosstab(data_csv[<span class="string">&#x27;中类编码&#x27;</span>],data_csv[<span class="string">&quot;中类名称&quot;</span>],margins_name=<span class="literal">True</span>))</span><br><span class="line"><span class="built_in">print</span>(pd.crosstab(data_csv[<span class="string">&#x27;大类编码&#x27;</span>],data_csv[<span class="string">&quot;大类名称&quot;</span>],margins_name=<span class="literal">True</span>))</span><br><span class="line"></span><br><span class="line">data_csv.to_csv(<span class="string">r&quot;../result/task1_1.csv&quot;</span>, index=<span class="literal">False</span>,index_label=<span class="literal">False</span>,encoding=<span class="string">&#x27;gbk&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;task1_1 completed&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>结果解释：经过观察数据猜测商品编码与小类编码、小类编码与小类名称、中类编码与中类名称、大类编码与大类名称存在表达相同的特征值的情况。经过交叉验证，发现小类编码与小类名称、中类编码与中类名称、大类编码与大类名称存在表达相同的特征值的情况，商品编码与小类编码不存在表达相同的特征值的情况。</p>
+<h2 id="数据统计"><a href="#数据统计" class="headerlink" title="数据统计"></a>数据统计</h2><p>这一步，官方给出了明确的要求，只要按部就班的照做就好。<br><img data-src="https://i.loli.net/2020/09/15/yhlmiRPCbfSk7Ud.png" alt="赛题任务1" height="80%" width="80%"><br>这道任务用的pandas库的DataFrame的基本操作加以阅读pandas官方文档并理解，即可完成。  </p>
+<ol>
+<li>对于任务1.2编写函数，以“大类名称”字段名为索引，计算各大类商品总的销售金额。  </li>
+<li>对于任务1.3，仍然编写函数，以“中类名称”字段名为索引，将每个中类商品的促销销售金额和非促销销售金额统计进行直接筛选统计保存数据   </li>
+<li>对于任务1.4，生鲜类产品和一般产品的每周销售金额采取根据日期相对应的在一年中的周数打标签，再进行筛选，通过调用数据透视表函数进行销售额累加，最终生成新表；  </li>
+<li>对于任务1.5，编写筛选函数，将每位顾客每月的消费额及消费天数统计，首先按月分组消费数据，再通过程序对各月的顾客编号与销售金额、顾客编号与购买次数建立透视表，最后对数据进行整合保存。   </li>
+</ol>
+<h2 id="数据分析与可视化"><a href="#数据分析与可视化" class="headerlink" title="数据分析与可视化"></a>数据分析与可视化</h2><p>这一步，不仅仅是pandas与numpy库的运用，还有使用matlibplot库进行绘图。<br><img data-src="https://i.loli.net/2020/09/15/4LI9GolaJxsNUkD.png" alt="赛题任务2" height="80%" width="80%">   </p>
+<ol>
+<li>对于任务2.1，首先将数据对商品类型进行筛选分为生鲜类和一般商品类，再使用透视表统计隔日销售额，最后调用相关绘图函数，完成绘图；</li>
+<li>对于任务2.2，首先按销售月份筛选数据，再按照大类名称建立与销售金额的透视表，最后完成绘图；</li>
+<li>对于任务2.3，首先通过是否促销进行数据筛选，再获取当前日期所对应的在一年之中对应的周数，分别建立周数与销售金额的透视表，完成绘图；</li>
+</ol>
+<h2 id="用户画像与策略"><a href="#用户画像与策略" class="headerlink" title="用户画像与策略"></a>用户画像与策略</h2><p>用户画像我们使用了wordcloud词云进行绘制虽然不够美观但是表示还是清晰的<br><img data-src="https://i.loli.net/2020/09/15/tkSGU63l8RfpZTP.png" alt="赛题任务3" height="80%" width="80%">   </p>
+<ol>
+<li>对于任务3.1，以顾客编号为筛选条件，对用户消费金额获取透视表，并进行排序取前10名顾客的用户编号，再获取这十名顾客的消费详情，根据金额绘制用户画像，根据消费金额比重绘制用户画像，总体上均可看出一个消费者的消费喜好。</li>
+<li>对于任务3.2，根据各大类名对数据进行筛选，具体为获取总表DataFrame的各大类名然后去重获取不同类名；然后根据类名对数据进行分割，获取各个类对应的数据。最后对每个类每天各自的每日销售量和销售总额分别进行进行汇总得到新的数据源。根据新数据源进行绘图。</li>
+<li>对于任务3.3，以大类名称为标签索引，通过计算促销商品的日均销售额（促销商品总额/进行促销的总天数）与非促销商品的日均销售额（非促销商品总额/进行促销的总天数）得出他们的柱状对比图。</li>
+</ol>
+<h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><p>如果有哪里没写对，没写好的地方，欢迎提出，一起探讨。对于后面几道主观题的结果还是不进行分享了。主要分享一下解题的思路，说不定大家有更好的答案，题目、每个任务的代码、过程数据和结果放在了开头的代码仓库。这次技能赛，虽说没能到达最后的答辩，争取泰迪杯。但是在赛前一天就速通pandas和numpy的各种函数与操作，比赛当天一起百度，查库函数的官方文档，还能拿到一等，回想起来还是很刺激。感谢波神和昌洲大佬。合作愉快^_^!</p>
+<h2 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h2><p>今年似乎爬虫又回归了，根据参加第一届数据挖掘比赛的同学和师兄回忆，第一届的时候，官方给出的是一个的网站，大家需要自行编写爬虫，爬取所需要的信息。也可以自己额外爬取其他网站增加数据。从我第一感觉上来说，理论上是应该不会有反爬的操作，要不然这比赛也太刺激了吧。要自行编写爬虫，这就意味着参赛的同学，要对网页结构有初步的理解。这个可以百度下html了解一下，上手难度不会太大。按照我以往的编写爬虫经验，给出一些的好用的库参考下吧。  </p>
+<ol>
+<li><p>方案一： scrapy爬虫框架<br>强大的爬虫框架，功能强大，需要一定的时间上手。最好能理解架构。</p>
+</li>
+<li><p>方案二： requests + BeautifulSoup + 正则表达式<br>这个方案是我最熟悉的一个方案，<br>requests库 负责完成网页请求，获取网页信息。<br>对于反爬，可以加上headers，proxy，cockies等必要信息，控制访问频率，来应对反爬虫，使你的行为更像真实用户<br>在没有反爬虫时或者反爬虫技术失效时，可以采用多进程，提高爬虫效率，不建议对正常运行的网站这么做，会给网站运维和其他访问用户增加压力。一些网站会在网站上添加robots.txt，告知对应的爬虫被允许的权限。当然这也是君子协定哈哈。<br>BeautifulSoup库 负责完成请求结构解析，并以树的形式进行封装，方便用户索引。<br>正则表达式则是在BeautifulSoup库，不好用的时候，直接进行文本匹配，暴力获取的方法。 </p>
+</li>
+<li><p>方案三：八爪鱼采集器<br>一款爬虫软件，一站式服务，不用自己编程，但是有些功能需要人民币才能解决。  </p>
+<img data-src="https://i.loli.net/2020/09/15/Tb3GkEUpQwr7a6X.png" alt="手动滑稽" height="80%" width="80%">  </li>
+</ol>
+<p>对于数据存储这一块，为了简单的话，可以考虑存成csv，或者说excel表格，python自带csv库，写是挺方便的。<br>有能力的话可以考虑数据库，常用的SQL语言也就四句（增删改查）：insert， update， delete， select</p>
+]]></content>
+      <tags>
+        <tag>泰迪杯</tag>
+        <tag>数据分析</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows10 LTSC 使用照片查看器</title>
+    <url>/archives/b9b5d2fc.html</url>
+    <content><![CDATA[<h1 id="Windows10-LTSC-使用照片查看器"><a href="#Windows10-LTSC-使用照片查看器" class="headerlink" title="Windows10 LTSC 使用照片查看器"></a>Windows10 LTSC 使用照片查看器</h1><p>之前看网上说老坛酸菜（LTSC）版本的Windows10，比较稳定，不会很多更新，而且还有专业版的功能。所以抱着好奇的心态就安装了一个。安装完就知错了呀···这没有应用商店，没有照片查看器，连便笺也没有。能咋办，安装呗···可是就在照片查看器这里卡住了，网上花里胡哨的照片查看器，不是插广告就是体积臃肿。</p>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>在网上找了一圈，基本上都是要下载应用商店再来下载Windows10自带的照片查看器，尝试了几个无效后，终于找到了一个不用下载就可以解决的办法。就是Windows10 自带Windows 7带的照片查看器，而且只要几行命令提示符就能解决。</p>
+<span id="more"></span>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>在一个<a href="http://bbs.pcbeta.com/forum.php?mod=viewthread&tid=1808513&highlight=">论坛的帖子七楼</a>里找到了这个解决方案就是</p>
+<figure class="highlight taggerscript"><table><tr><td class="code"><pre><span class="line">以管理员身份运行命令提示符</span><br><span class="line"></span><br><span class="line">FTYPE Paint.Picture=<span class="variable">%SystemRoot%</span><span class="symbol">\S</span>ystem32<span class="symbol">\r</span>undll32.exe &quot;<span class="variable">%ProgramFiles%</span><span class="symbol">\W</span>indows Photo Viewer<span class="symbol">\P</span>hotoViewer.dll&quot;, ImageView_Fullscreen <span class="variable">%1</span></span><br><span class="line"><span class="variable">FTYPE jpegfile=%</span>SystemRoot<span class="variable">%\System32\rundll32.exe &quot;%</span>ProgramFiles<span class="variable">%\Windows Photo Viewer\PhotoViewer.dll&quot;, ImageView_Fullscreen %</span>1</span><br><span class="line">FTYPE pngfile=<span class="variable">%SystemRoot%</span><span class="symbol">\S</span>ystem32<span class="symbol">\r</span>undll32.exe &quot;<span class="variable">%ProgramFiles%</span><span class="symbol">\W</span>indows Photo Viewer<span class="symbol">\P</span>hotoViewer.dll&quot;, ImageView_Fullscreen <span class="variable">%1</span></span><br></pre></td></tr></table></figure>
+
+<p>就是这么潇洒简单霸气。</p>
+<p><img data-src="https://i.loli.net/2019/08/08/bpNVEIdnyUD8uSz.jpg" alt="windowsphoto.jpg"></p>
+]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
+      <tags>
+        <tag>LTSC</tag>
+        <tag>电脑优化</tag>
       </tags>
   </entry>
 </search>
