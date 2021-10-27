@@ -1,6 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>记第一次搭建博客遇到的问题</title>
+    <url>/archives/91185781.html</url>
+    <content><![CDATA[<h1 id="前记"><a href="#前记" class="headerlink" title="前记"></a>前记</h1><p>刚好在周末放松一下，加上最近在阿里云搞了个学生机，就想搭建个博客玩一下，后续会不会写，看看再说，看看自己会不会用这个平台记录下自己的学习之路。<br>因为没有过搭建博客的经验，所以有点坎坷，两天时间才得以搭建完成，还没有算上界面的优化设置。参考了很多大佬们的教程，但无奈自己还是跳进了很多的坑。在这里记一下，避免下次再跳吧···</p>
+<span id="more"></span>
+<p>原本我是打算在阿里目前手头上的资源，一台阿里云的学生机，一个域名，一个github。</p>
+<h1 id="败走Ubuntu"><a href="#败走Ubuntu" class="headerlink" title="败走Ubuntu"></a>败走Ubuntu</h1><p>最近在搞FRP内网穿透，所以在阿里上注册了一个学生机，搭载了Ubuntu16.04，只用作frp的话实在是太浪费了，所以打算在上面搭建个博客，在网上找了一圈的教程，最终决定使用hexo，这个轻量，高逼格的博客工具，加上中文文档，感觉还算友好。</p>
+<h2 id="坑1-Github的设置"><a href="#坑1-Github的设置" class="headerlink" title="坑1 Github的设置"></a>坑1 Github的设置</h2><p>看了一堆教程后决定利用Github这个平台来存放静态网页，摆脱阿里云学生机1M带宽的束缚，此时就需要的在阿里云学生机上生成密钥来完成代码提交的认证操作。</p>
+<h3 id="细节1-检查邮箱和名字有没有输入正确"><a href="#细节1-检查邮箱和名字有没有输入正确" class="headerlink" title="细节1 检查邮箱和名字有没有输入正确"></a>细节1 检查邮箱和名字有没有输入正确</h3><p>在教程中有这么一句($不用复制，否则会报错)</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$ git config  --<span class="built_in">global</span>  user.name  <span class="string">&quot;your name&quot;</span></span><br><span class="line">$ git config  --<span class="built_in">global</span>  user.email  <span class="string">&quot;your_email@youremail.com&quot;</span></span><br></pre></td></tr></table></figure>
+<p>在实际操作，我并没有去探究到底要不要引号，所以我也不知道自己的格式有没有输入错误，所以可以用一下指令去检查自己有没有输入正确</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">cat ~/.gitconfig</span><br></pre></td></tr></table></figure>
+<p>如果输入正确将得到类似于下文的结果<br><img data-src="https://i.loli.net/2019/08/06/1YFhwJ9BzE7emyV.png" width=400></p>
+<h3 id="细节2-分清公钥与私钥"><a href="#细节2-分清公钥与私钥" class="headerlink" title="细节2 分清公钥与私钥"></a>细节2 分清公钥与私钥</h3><p>在使用命令</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;你的邮箱(不用引号)&quot;</span></span><br></pre></td></tr></table></figure>
+<p>生成私钥和公钥时，如果使用默认命令，即全部回车，Ubuntu将会在<code>/root/.ssh</code>下生成这两个文件<code>id_rsa</code>和<code>id_rsa.pub</code><br>其中私钥：<code>id_rsa</code>将以下面的字段开头和结尾</p>
+<blockquote>
+<p>—–BEGIN RSA PRIVATE KEY—–<br>私钥内容<br>—–END RSA PRIVATE KEY—–</p>
+</blockquote>
+<p>而公钥：<code>id_rsa.pub</code>将以下面的字段开头</p>
+<blockquote>
+<p>ssh-rsa 公钥内容</p>
+</blockquote>
+<p>以你之前设置的名字和邮箱结尾<br>需要配置到Github的是<strong>公钥</strong>！！！——–来自一个小白的呐喊</p>
+<p>因为上述的粗心，让我放弃了在Linux系统上搭建hexo的想法。<br>不过现在多亏了GitHub可以让我在多个环境下拷贝我的hexo备份，有朝一日会再次尝试在Linux上搭建。</p>
+<h1 id="初试Windows"><a href="#初试Windows" class="headerlink" title="初试Windows"></a>初试Windows</h1><p>在吃饭摸鱼的时候看到了一篇在Windows上搭建hexo的文章，所以决定动手尝试。<br>就是这一篇👉 <a href="https://blog.csdn.net/qq_27754983/article/details/76143478">Windows下，Hexo+GitHub搭建博客</a><br>详细的阐述了如何在Windows上搭建hexo博客。写的十分详细，所以就这样吧····继续去调界面了。</p>
+]]></content>
+      <categories>
+        <category>建站</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>frp实现内网穿透</title>
     <url>/archives/f51df9f4.html</url>
     <content><![CDATA[<h1 id="frp实现内网穿透-最简配置"><a href="#frp实现内网穿透-最简配置" class="headerlink" title="frp实现内网穿透 最简配置"></a><strong>frp实现内网穿透 最简配置</strong></h1><p>内网环境现在可以说非常的普遍，如果连接控制的内网环境设备的话，就变得非常不方便，像端口映射，dmz主机已经不能满足我们的要。不过好在现在实现内网穿透的工具也很多，在这里就记录下一这款配置简单，功能强大的内网穿透工具FRP的配置实战。</p>
@@ -170,122 +204,6 @@
       </tags>
   </entry>
   <entry>
-    <title>记第一次搭建博客遇到的问题</title>
-    <url>/archives/91185781.html</url>
-    <content><![CDATA[<h1 id="前记"><a href="#前记" class="headerlink" title="前记"></a>前记</h1><p>刚好在周末放松一下，加上最近在阿里云搞了个学生机，就想搭建个博客玩一下，后续会不会写，看看再说，看看自己会不会用这个平台记录下自己的学习之路。<br>因为没有过搭建博客的经验，所以有点坎坷，两天时间才得以搭建完成，还没有算上界面的优化设置。参考了很多大佬们的教程，但无奈自己还是跳进了很多的坑。在这里记一下，避免下次再跳吧···</p>
-<span id="more"></span>
-<p>原本我是打算在阿里目前手头上的资源，一台阿里云的学生机，一个域名，一个github。</p>
-<h1 id="败走Ubuntu"><a href="#败走Ubuntu" class="headerlink" title="败走Ubuntu"></a>败走Ubuntu</h1><p>最近在搞FRP内网穿透，所以在阿里上注册了一个学生机，搭载了Ubuntu16.04，只用作frp的话实在是太浪费了，所以打算在上面搭建个博客，在网上找了一圈的教程，最终决定使用hexo，这个轻量，高逼格的博客工具，加上中文文档，感觉还算友好。</p>
-<h2 id="坑1-Github的设置"><a href="#坑1-Github的设置" class="headerlink" title="坑1 Github的设置"></a>坑1 Github的设置</h2><p>看了一堆教程后决定利用Github这个平台来存放静态网页，摆脱阿里云学生机1M带宽的束缚，此时就需要的在阿里云学生机上生成密钥来完成代码提交的认证操作。</p>
-<h3 id="细节1-检查邮箱和名字有没有输入正确"><a href="#细节1-检查邮箱和名字有没有输入正确" class="headerlink" title="细节1 检查邮箱和名字有没有输入正确"></a>细节1 检查邮箱和名字有没有输入正确</h3><p>在教程中有这么一句($不用复制，否则会报错)</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$ git config  --<span class="built_in">global</span>  user.name  <span class="string">&quot;your name&quot;</span></span><br><span class="line">$ git config  --<span class="built_in">global</span>  user.email  <span class="string">&quot;your_email@youremail.com&quot;</span></span><br></pre></td></tr></table></figure>
-<p>在实际操作，我并没有去探究到底要不要引号，所以我也不知道自己的格式有没有输入错误，所以可以用一下指令去检查自己有没有输入正确</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">cat ~/.gitconfig</span><br></pre></td></tr></table></figure>
-<p>如果输入正确将得到类似于下文的结果<br><img data-src="https://i.loli.net/2019/08/06/1YFhwJ9BzE7emyV.png" width=400></p>
-<h3 id="细节2-分清公钥与私钥"><a href="#细节2-分清公钥与私钥" class="headerlink" title="细节2 分清公钥与私钥"></a>细节2 分清公钥与私钥</h3><p>在使用命令</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;你的邮箱(不用引号)&quot;</span></span><br></pre></td></tr></table></figure>
-<p>生成私钥和公钥时，如果使用默认命令，即全部回车，Ubuntu将会在<code>/root/.ssh</code>下生成这两个文件<code>id_rsa</code>和<code>id_rsa.pub</code><br>其中私钥：<code>id_rsa</code>将以下面的字段开头和结尾</p>
-<blockquote>
-<p>—–BEGIN RSA PRIVATE KEY—–<br>私钥内容<br>—–END RSA PRIVATE KEY—–</p>
-</blockquote>
-<p>而公钥：<code>id_rsa.pub</code>将以下面的字段开头</p>
-<blockquote>
-<p>ssh-rsa 公钥内容</p>
-</blockquote>
-<p>以你之前设置的名字和邮箱结尾<br>需要配置到Github的是<strong>公钥</strong>！！！——–来自一个小白的呐喊</p>
-<p>因为上述的粗心，让我放弃了在Linux系统上搭建hexo的想法。<br>不过现在多亏了GitHub可以让我在多个环境下拷贝我的hexo备份，有朝一日会再次尝试在Linux上搭建。</p>
-<h1 id="初试Windows"><a href="#初试Windows" class="headerlink" title="初试Windows"></a>初试Windows</h1><p>在吃饭摸鱼的时候看到了一篇在Windows上搭建hexo的文章，所以决定动手尝试。<br>就是这一篇👉 <a href="https://blog.csdn.net/qq_27754983/article/details/76143478">Windows下，Hexo+GitHub搭建博客</a><br>详细的阐述了如何在Windows上搭建hexo博客。写的十分详细，所以就这样吧····继续去调界面了。</p>
-]]></content>
-      <categories>
-        <category>建站</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Markdown语法笔记</title>
-    <url>/archives/b60f5572.html</url>
-    <content><![CDATA[<h1 id="Markdown语法笔记"><a href="#Markdown语法笔记" class="headerlink" title="Markdown语法笔记"></a><strong>Markdown语法笔记</strong></h1><p>markdown是一种纯文本格式的标记语言。简单易上手，但还是敌不过久了没写，总是忘记语法。</p>
-<span id="more"></span>
-
-<h2 id="一、标题"><a href="#一、标题" class="headerlink" title="一、标题"></a>一、标题</h2><p>通过<strong>井号的个数</strong>来判断标题级数。最高支持六级！<br>需要注意的是#后需要添加空格； </p>
-<figure class="highlight clean"><table><tr><td class="code"><pre><span class="line">## 这是二级标题</span><br></pre></td></tr></table></figure>
-<h2 id="这是二级标题"><a href="#这是二级标题" class="headerlink" title="这是二级标题"></a>这是二级标题</h2><h2 id="二、字体"><a href="#二、字体" class="headerlink" title="二、字体"></a>二、字体</h2><ul>
-<li><h3 id="加粗"><a href="#加粗" class="headerlink" title="加粗"></a><strong>加粗</strong></h3>在要加粗的文字两边用<strong>两个</strong>星号包起来<figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line"><span class="strong">**两个星号**</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<ul>
-<li><h3 id="斜体"><a href="#斜体" class="headerlink" title="斜体"></a><em>斜体</em></h3>在要加粗的文字两边用<strong>一个</strong>星号包起来<figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line"><span class="strong">*一个星号*</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<ul>
-<li><h3 id="斜体加粗"><a href="#斜体加粗" class="headerlink" title="斜体加粗"></a><em><strong>斜体加粗</strong></em></h3><p>在要加粗的文字两边用<em><strong>三个</strong></em>星号包起来</p>
-<figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line"><span class="strong">***三个星号**</span>*</span><br></pre></td></tr></table></figure></li>
-<li><h3 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a><del>删除线</del></h3><p>在要加粗的文字两边用<del>两个</del>波浪线包起来</p>
-<figure class="highlight haml"><table><tr><td class="code"><pre><span class="line">~~两个波浪线~~</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="三、引用"><a href="#三、引用" class="headerlink" title="三、引用"></a>三、引用</h2><p>在文字前添加&gt;，可以使用嵌套；</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"> a</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt; b</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; c</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>a</p>
-<blockquote>
-<p>b</p>
-<blockquote>
-<p>c</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><p>三个或者三个以上的 - 或者 * </p>
-<figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line"><span class="bullet">---</span></span><br><span class="line"><span class="bullet"></span><span class="section">***</span></span><br><span class="line"><span class="section">----</span></span><br><span class="line"><span class="strong">*****</span></span><br></pre></td></tr></table></figure>
-<hr>
-<hr>
-<hr>
-<hr>
-<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>我是使用<a href="https://sm.ms/">SM.MS</a>，直接生成模板粘贴使用，效果还不错，就是好像不能够剪切板复制过去的图片重命名后期不方便进行管理；<br><img data-src="https://i.loli.net/2019/10/28/BEu7no2MeHGKFAU.png" alt="image.png"></p>
-<h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><figure class="highlight scheme"><table><tr><td class="code"><pre><span class="line">[<span class="name">链接名字</span>](<span class="name">链接地址</span>)</span><br><span class="line">[<span class="name">mistgun</span><span class="symbol">&#x27;s</span> blog](<span class="name">https://blog.msitgun.net</span>)</span><br></pre></td></tr></table></figure>
-<p><a href="https://blog.msitgun.net/">mistgun’s blog</a></p>
-<h3 id="LOGS"><a href="#LOGS" class="headerlink" title="LOGS"></a>LOGS</h3><p>2019.10.27 溜溜溜，鸽了，下次再补充</p>
-<h3 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h3><p>1.代码<br>2.加粗特殊符号<br>3.我的SM.MS的账号好像丢了·········<br>4.流程图<br>5.表格<br>6.公式<br>7.列表<br>。。。。。  </p>
-]]></content>
-      <categories>
-        <category>建站</category>
-      </categories>
-      <tags>
-        <tag>markdown</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo填坑之旅——持续更新</title>
-    <url>/archives/e74ebdad.html</url>
-    <content><![CDATA[<h1 id="持续更新"><a href="#持续更新" class="headerlink" title="持续更新"></a>持续更新</h1><p>休息了几天，闲来无事记录下当初搭建这个博客走过的一些路，掉进的一些坑，避免自己再跳一次。所有遇到问题基本上都还是靠度娘解决的，留下超链接，也给自己的标签栏减轻点压力。</p>
-<span id="more"></span>
-<h1 id="HEXO"><a href="#HEXO" class="headerlink" title="HEXO"></a><strong>HEXO</strong></h1><p>这个博客是利用GitHub的静态网页仓库（不知道这样表述够不够准确）加上hexo轻博客模板，再配上清新简约的next主题搭建的。主要看重的是不需要自己再去配置服务器，直接用自己的Windows就能轻松完成搭建，当然在这之中也花一点时间去琢磨。</p>
-<h2 id="1-分类和标签"><a href="#1-分类和标签" class="headerlink" title="1.分类和标签"></a>1.分类和标签</h2><p>主题是有分类和标签的，但需要自己配置才能够使用，主要依靠以下博客去配置<br><a href="https://blog.csdn.net/Wonz5130/article/details/84666519">解决 Hexo 搭建博客显示不出分类、标签问题</a><br>如果不去配置将会出现点击分类后404的情况。<br><img data-src="https://i.loli.net/2019/08/22/7hrkyeSMoAi5sxC.png" width=400 align=center></p>
-<h2 id="2-导航栏小图标"><a href="#2-导航栏小图标" class="headerlink" title="2.导航栏小图标"></a>2.导航栏小图标</h2><p>如下图所示的Linux和FRP上面的小图标，因为next主题的升级，其配置格式和以往的已经有些不同。<br><img data-src="https://i.loli.net/2019/08/22/VtRs1xlLCwpcE5b.png" width=400></p>
-<p>首先是图标库的网站：<br><a href="http://www.fontawesome.com.cn/faicons/">http://www.fontawesome.com.cn/faicons/</a><br>找到自己需要的图标，记下图标名称  </p>
-<img data-src="https://i.loli.net/2019/08/22/ZwYXo7KpG8JIAeS.png" width=400> 
-
-<p>在主题的配置文件中找到menu</p>
-<img data-src="https://i.loli.net/2019/08/22/aKC3b8sfxeRnDLh.png" wdith =600>
-
-
-<h2 id="3-设置头像"><a href="#3-设置头像" class="headerlink" title="3.设置头像"></a>3.设置头像</h2><p><a href="https://blog.csdn.net/qq_30242609/article/details/53440869">为Hexo-Next主题设置头部图片</a></p>
-<h1 id="ATOM"><a href="#ATOM" class="headerlink" title="ATOM"></a><strong>ATOM</strong></h1><p>。。。。。<strong>未完待续</strong></p>
-<h4 id="更新记录"><a href="#更新记录" class="headerlink" title="更新记录"></a>更新记录</h4><p>20190822： 记录部分hexo遇到的问题，头像设置，导航栏图标和分类标签的设置</p>
-<h4 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h4><ol>
-<li>ATOM的配置： 回车的问题（不同系统之间的回车，中文自动换行）；设置自动保存；插件的安装方法</li>
-<li>图床的选择</li>
-<li>hexo：右上角的GitHub图标，访客与阅读统计（过滤自身的访问需要解决）</li>
-</ol>
-]]></content>
-      <categories>
-        <category>建站</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>atom</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>2019泰迪杯数据分析技能赛B题心得 </title>
     <url>/archives/d19c3d76.html</url>
     <content><![CDATA[<h1 id="2019泰迪杯数据分析技能赛B题心得"><a href="#2019泰迪杯数据分析技能赛B题心得" class="headerlink" title="2019泰迪杯数据分析技能赛B题心得"></a>2019泰迪杯数据分析技能赛B题心得</h1><p> 虽说泰迪杯技能赛不太热门，但想要拿奖还是要花点时间。全称是<a href="https://www.tipdm.org/bdrace/jljingsai/">泰迪杯数据分析职业技能大赛</a>。重点在于数据处理与分析，比的是数据的洞察力和敏感程度。再辅以编程基础与搜索能力完成比赛。 </p>
@@ -370,6 +288,56 @@
       </tags>
   </entry>
   <entry>
+    <title>Markdown语法笔记</title>
+    <url>/archives/b60f5572.html</url>
+    <content><![CDATA[<h1 id="Markdown语法笔记"><a href="#Markdown语法笔记" class="headerlink" title="Markdown语法笔记"></a><strong>Markdown语法笔记</strong></h1><p>markdown是一种纯文本格式的标记语言。简单易上手，但还是敌不过久了没写，总是忘记语法。</p>
+<span id="more"></span>
+
+<h2 id="一、标题"><a href="#一、标题" class="headerlink" title="一、标题"></a>一、标题</h2><p>通过<strong>井号的个数</strong>来判断标题级数。最高支持六级！<br>需要注意的是#后需要添加空格； </p>
+<figure class="highlight clean"><table><tr><td class="code"><pre><span class="line">## 这是二级标题</span><br></pre></td></tr></table></figure>
+<h2 id="这是二级标题"><a href="#这是二级标题" class="headerlink" title="这是二级标题"></a>这是二级标题</h2><h2 id="二、字体"><a href="#二、字体" class="headerlink" title="二、字体"></a>二、字体</h2><ul>
+<li><h3 id="加粗"><a href="#加粗" class="headerlink" title="加粗"></a><strong>加粗</strong></h3>在要加粗的文字两边用<strong>两个</strong>星号包起来<figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line"><span class="strong">**两个星号**</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<ul>
+<li><h3 id="斜体"><a href="#斜体" class="headerlink" title="斜体"></a><em>斜体</em></h3>在要加粗的文字两边用<strong>一个</strong>星号包起来<figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line"><span class="strong">*一个星号*</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<ul>
+<li><h3 id="斜体加粗"><a href="#斜体加粗" class="headerlink" title="斜体加粗"></a><em><strong>斜体加粗</strong></em></h3><p>在要加粗的文字两边用<em><strong>三个</strong></em>星号包起来</p>
+<figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line"><span class="strong">***三个星号**</span>*</span><br></pre></td></tr></table></figure></li>
+<li><h3 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a><del>删除线</del></h3><p>在要加粗的文字两边用<del>两个</del>波浪线包起来</p>
+<figure class="highlight haml"><table><tr><td class="code"><pre><span class="line">~~两个波浪线~~</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="三、引用"><a href="#三、引用" class="headerlink" title="三、引用"></a>三、引用</h2><p>在文字前添加&gt;，可以使用嵌套；</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"> a</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt; b</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; c</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>a</p>
+<blockquote>
+<p>b</p>
+<blockquote>
+<p>c</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><p>三个或者三个以上的 - 或者 * </p>
+<figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line"><span class="bullet">---</span></span><br><span class="line"><span class="bullet"></span><span class="section">***</span></span><br><span class="line"><span class="section">----</span></span><br><span class="line"><span class="strong">*****</span></span><br></pre></td></tr></table></figure>
+<hr>
+<hr>
+<hr>
+<hr>
+<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>我是使用<a href="https://sm.ms/">SM.MS</a>，直接生成模板粘贴使用，效果还不错，就是好像不能够剪切板复制过去的图片重命名后期不方便进行管理；<br><img data-src="https://i.loli.net/2019/10/28/BEu7no2MeHGKFAU.png" alt="image.png"></p>
+<h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><figure class="highlight scheme"><table><tr><td class="code"><pre><span class="line">[<span class="name">链接名字</span>](<span class="name">链接地址</span>)</span><br><span class="line">[<span class="name">mistgun</span><span class="symbol">&#x27;s</span> blog](<span class="name">https://blog.msitgun.net</span>)</span><br></pre></td></tr></table></figure>
+<p><a href="https://blog.msitgun.net/">mistgun’s blog</a></p>
+<h3 id="LOGS"><a href="#LOGS" class="headerlink" title="LOGS"></a>LOGS</h3><p>2019.10.27 溜溜溜，鸽了，下次再补充</p>
+<h3 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h3><p>1.代码<br>2.加粗特殊符号<br>3.我的SM.MS的账号好像丢了·········<br>4.流程图<br>5.表格<br>6.公式<br>7.列表<br>。。。。。  </p>
+]]></content>
+      <categories>
+        <category>建站</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>SSH工具的使用与推荐</title>
     <url>/archives/441bd76c.html</url>
     <content><![CDATA[<p>自从接触了linux肯定被其强大的命令行所折服，不知鼠标为何物。只需要几行代码就能完成window上鼠标的一系列操作。命令的存在给了linux的控制提供了极大的便利性，在远程控制时只需要超小的带宽就能完成。不像win这类系统依托图形化界面才能大部分操作，linux配合云主机和内网穿透，只要能连上局域网就能控制你的linux主机。在谈到远程SSH控制那么将少不了远程的控制工具。</p>
@@ -441,6 +409,38 @@
       </tags>
   </entry>
   <entry>
+    <title>hexo填坑之旅——持续更新</title>
+    <url>/archives/e74ebdad.html</url>
+    <content><![CDATA[<h1 id="持续更新"><a href="#持续更新" class="headerlink" title="持续更新"></a>持续更新</h1><p>休息了几天，闲来无事记录下当初搭建这个博客走过的一些路，掉进的一些坑，避免自己再跳一次。所有遇到问题基本上都还是靠度娘解决的，留下超链接，也给自己的标签栏减轻点压力。</p>
+<span id="more"></span>
+<h1 id="HEXO"><a href="#HEXO" class="headerlink" title="HEXO"></a><strong>HEXO</strong></h1><p>这个博客是利用GitHub的静态网页仓库（不知道这样表述够不够准确）加上hexo轻博客模板，再配上清新简约的next主题搭建的。主要看重的是不需要自己再去配置服务器，直接用自己的Windows就能轻松完成搭建，当然在这之中也花一点时间去琢磨。</p>
+<h2 id="1-分类和标签"><a href="#1-分类和标签" class="headerlink" title="1.分类和标签"></a>1.分类和标签</h2><p>主题是有分类和标签的，但需要自己配置才能够使用，主要依靠以下博客去配置<br><a href="https://blog.csdn.net/Wonz5130/article/details/84666519">解决 Hexo 搭建博客显示不出分类、标签问题</a><br>如果不去配置将会出现点击分类后404的情况。<br><img data-src="https://i.loli.net/2019/08/22/7hrkyeSMoAi5sxC.png" width=400 align=center></p>
+<h2 id="2-导航栏小图标"><a href="#2-导航栏小图标" class="headerlink" title="2.导航栏小图标"></a>2.导航栏小图标</h2><p>如下图所示的Linux和FRP上面的小图标，因为next主题的升级，其配置格式和以往的已经有些不同。<br><img data-src="https://i.loli.net/2019/08/22/VtRs1xlLCwpcE5b.png" width=400></p>
+<p>首先是图标库的网站：<br><a href="http://www.fontawesome.com.cn/faicons/">http://www.fontawesome.com.cn/faicons/</a><br>找到自己需要的图标，记下图标名称  </p>
+<img data-src="https://i.loli.net/2019/08/22/ZwYXo7KpG8JIAeS.png" width=400> 
+
+<p>在主题的配置文件中找到menu</p>
+<img data-src="https://i.loli.net/2019/08/22/aKC3b8sfxeRnDLh.png" wdith =600>
+
+
+<h2 id="3-设置头像"><a href="#3-设置头像" class="headerlink" title="3.设置头像"></a>3.设置头像</h2><p><a href="https://blog.csdn.net/qq_30242609/article/details/53440869">为Hexo-Next主题设置头部图片</a></p>
+<h1 id="ATOM"><a href="#ATOM" class="headerlink" title="ATOM"></a><strong>ATOM</strong></h1><p>。。。。。<strong>未完待续</strong></p>
+<h4 id="更新记录"><a href="#更新记录" class="headerlink" title="更新记录"></a>更新记录</h4><p>20190822： 记录部分hexo遇到的问题，头像设置，导航栏图标和分类标签的设置</p>
+<h4 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h4><ol>
+<li>ATOM的配置： 回车的问题（不同系统之间的回车，中文自动换行）；设置自动保存；插件的安装方法</li>
+<li>图床的选择</li>
+<li>hexo：右上角的GitHub图标，访客与阅读统计（过滤自身的访问需要解决）</li>
+</ol>
+]]></content>
+      <categories>
+        <category>建站</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>atom</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Windows10 LTSC 使用照片查看器</title>
     <url>/archives/b9b5d2fc.html</url>
     <content><![CDATA[<h1 id="Windows10-LTSC-使用照片查看器"><a href="#Windows10-LTSC-使用照片查看器" class="headerlink" title="Windows10 LTSC 使用照片查看器"></a>Windows10 LTSC 使用照片查看器</h1><p>之前看网上说老坛酸菜（LTSC）版本的Windows10，比较稳定，不会很多更新，而且还有专业版的功能。所以抱着好奇的心态就安装了一个。安装完就知错了呀···这没有应用商店，没有照片查看器，连便笺也没有。能咋办，安装呗···可是就在照片查看器这里卡住了，网上花里胡哨的照片查看器，不是插广告就是体积臃肿。</p>
@@ -458,6 +458,104 @@
       <tags>
         <tag>LTSC</tag>
         <tag>电脑优化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>jupyterlab</title>
+    <url>/archives/d41bc916.html</url>
+    <content><![CDATA[<h1 id="Jupyter-lab-3-0-安装、配置并选择虚拟环境开机启动"><a href="#Jupyter-lab-3-0-安装、配置并选择虚拟环境开机启动" class="headerlink" title="Jupyter-lab 3.0 安装、配置并选择虚拟环境开机启动"></a>Jupyter-lab 3.0 安装、配置并选择虚拟环境开机启动</h1><h2 id="1-安装jupyter-lab3-0"><a href="#1-安装jupyter-lab3-0" class="headerlink" title="1. 安装jupyter-lab3.0"></a>1. 安装jupyter-lab3.0</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install jupyterlab==3</span><br><span class="line"><span class="comment"># 或者使用conda安装</span></span><br><span class="line"><span class="comment"># conda install -c conda-forge jupyterlab=3</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-生成配置文件并设置密码"><a href="#2-生成配置文件并设置密码" class="headerlink" title="2.生成配置文件并设置密码"></a>2.生成配置文件并设置密码</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">jupyter lab --generate-config	</span><br><span class="line">jupyter lab password	</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-编辑配置文件"><a href="#3-编辑配置文件" class="headerlink" title="3. 编辑配置文件"></a>3. 编辑配置文件</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim ~/.jupyter/jupyter_lab_config.py</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 允许跨域访问，在用nginx反向代理jupyter-lab时需要打开</span></span><br><span class="line"><span class="attr">c.ServerApp.allow_origin</span> = <span class="string">&#x27;*&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 允许远程访问</span></span><br><span class="line"><span class="attr">c.ServerApp.allow_remote_access</span> = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 监听来自所有ip的连接，默认时localhost只能本地访问</span></span><br><span class="line"><span class="comment"># 假设主机局域网ip为192.168.1.101，此处设置为局域网ip，则局域网内都可以访问</span></span><br><span class="line"><span class="attr">c.ServerApp.ip</span> = <span class="string">&#x27;0.0.0.0&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置默认打开路径 </span></span><br><span class="line"><span class="attr">c.ServerApp.root_dir</span> = <span class="string">&quot;/home/username/code&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 开启jupyter-lab时不自动打开浏览器</span></span><br><span class="line"><span class="attr">c.ServerApp.open_browser</span> = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 默认监听端口</span></span><br><span class="line"><span class="attr">c.ServerApp.port</span> = <span class="number">58000</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="4-安装插件"><a href="#4-安装插件" class="headerlink" title="4. 安装插件"></a>4. 安装插件</h1><p>首先enable插件管理</p>
+<img data-src="https://pic1.xuehuaimg.com/proxy/https://i.imgur.com/fQmHkWO.png" align="center" >
+
+<h2 id="4-1-安装中文语言包"><a href="#4-1-安装中文语言包" class="headerlink" title="4.1 安装中文语言包"></a>4.1 安装中文语言包</h2><figure class="highlight armasm"><table><tr><td class="code"><pre><span class="line"><span class="symbol">pip</span> install jupyterlab-language-pack-zh-<span class="meta">CN</span></span><br></pre></td></tr></table></figure>
+
+<p>然后在settings→language中切换</p>
+<h2 id="4-2-debugger-语法检测"><a href="#4-2-debugger-语法检测" class="headerlink" title="4.2 debugger 语法检测"></a>4.2 debugger 语法检测</h2><p>插件Github地址：<a href="https://github.com/jupyterlab/debugger">https://github.com/jupyterlab/debugger</a></p>
+<p>jupyter-lab3.0默认带有debugger，所以不需要额外安装。但缺少依赖包</p>
+<p>安装依赖</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda install -c conda-forge xeus-python</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line"><span class="comment"># pip install xeus-python</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="4-2-代码提示"><a href="#4-2-代码提示" class="headerlink" title="4.2 代码提示"></a>4.2 代码提示</h2><p>插件Github地址：<a href="https://github.com/jupyter-lsp/jupyterlab-lsp">Language Server Protocol integration for Jupyter</a></p>
+<p>安装方法</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 先安装Language Server Protocol integration for Jupyter-lab</span></span><br><span class="line">conda install -c conda-forge  jupyterlab-lsp</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line"><span class="comment">#pip install jupyterlab-lsp</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 再安装语法库</span></span><br><span class="line">pip install <span class="string">&#x27;python-lsp-server[all]&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="4-3-可交互-matplotlib"><a href="#4-3-可交互-matplotlib" class="headerlink" title="4.3 可交互 matplotlib"></a>4.3 可交互 matplotlib</h2><p>插件Github地址：<a href="https://github.com/matplotlib/ipympl">ipympl</a></p>
+<p>在代码开头插入即可</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">%matplotlib widget</span><br></pre></td></tr></table></figure>
+
+
+
+<p>安装方法：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda install -c conda-forge ipympl</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line"><span class="comment"># pip install ipympl</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="4-4-自动代码格式化"><a href="#4-4-自动代码格式化" class="headerlink" title="4.4 自动代码格式化"></a>4.4 自动代码格式化</h2><p>插件Github地址：<a href="https://github.com/ryantam626/jupyterlab_code_formatter">Jupyterlab Code Formatter</a></p>
+<p>配置参考链接：<a href="https://blog.csdn.net/mighty13/article/details/120024319">https://blog.csdn.net/mighty13/article/details/120024319</a></p>
+<p>安装方法</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install jupyterlab_code_formatter</span><br><span class="line">pip install autopep8</span><br></pre></td></tr></table></figure>
+
+<p>重启jupyter lab</p>
+<p>设置→高级编辑器</p>
+<img data-src="https://pic1.xuehuaimg.com/proxy/https://i.imgur.com/DqDImiv.png" align="center"  >
+
+<p>修改jupyterlab Code Formatter</p>
+<img data-src="https://pic1.xuehuaimg.com/proxy/https://i.imgur.com/Jf5OBr9.png" align="center"  >
+
+<p>输入内容：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;preferences&quot;</span>: &#123;</span><br><span class="line">        <span class="attr">&quot;default_formatter&quot;</span>: &#123;</span><br><span class="line">            <span class="attr">&quot;python&quot;</span>: <span class="string">&quot;autopep8&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;R&quot;</span>: <span class="string">&quot;styler&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>通过点击状态栏或者右键即可使用</p>
+<ul>
+<li>对全局生效</li>
+</ul>
+<img data-src="https://pic1.xuehuaimg.com/proxy/https://i.imgur.com/TAHkioO.png" >
+
+<ul>
+<li>对当前代码块生效</li>
+</ul>
+<img data-src="https://pic1.xuehuaimg.com/proxy/https://i.imgur.com/JkpQRro.png" align="center" >
+
+<h1 id="5-添加到开机启动项"><a href="#5-添加到开机启动项" class="headerlink" title="5. 添加到开机启动项"></a>5. 添加到开机启动项</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/systemd/system/jupyter-lab.service</span><br></pre></td></tr></table></figure>
+
+<p>输入以下内容</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=jupyter lab</span><br><span class="line">After=network.target   <span class="comment"># 在网络启动后启动此服务</span></span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">User=username           <span class="comment"># 以此用户启动本程序</span></span><br><span class="line"><span class="comment"># 启动脚本</span></span><br><span class="line">ExecStart=/home/marques/.conda/envs/torch-marques/bin/jupyter-lab --no-browser    <span class="comment"># jupyter-lab路径</span></span><br><span class="line"><span class="comment"># 因为我使用anaonda默认虚拟环境启动，所以选择执行脚本方式启动</span></span><br><span class="line"><span class="comment"># ExecStart=/home/marques/software/jupyterlabscript/lab.sh</span></span><br><span class="line">ExecStop=/usr/bin/pkill jupyter-lab</span><br><span class="line">KillMode=process  </span><br><span class="line">Restart=always     <span class="comment"># 程序崩溃后自动重启程序</span></span><br><span class="line">RestartSec=30s     <span class="comment"># 当程序崩溃后30s重新启动</span></span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+
+
+
+<p>切换虚拟环境启动jupyter-lab脚本</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash -l</span></span><br><span class="line"><span class="comment"># 上面 -l 参数是指以会话方式打开脚本，否则无法切换anaconda虚拟环境</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 下面这段在~/.bashrc复制过来</span></span><br><span class="line"><span class="comment"># 其操作是将conda添加到环境变量</span></span><br><span class="line"><span class="comment"># 每台服务器安装位置不一定一致，要重新复制</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># &gt;&gt;&gt; conda initialize &gt;&gt;&gt;</span></span><br><span class="line"><span class="comment"># !! Contents within this block are managed by &#x27;conda init&#x27; !!</span></span><br><span class="line">__conda_setup=<span class="string">&quot;<span class="subst">$(&#x27;/home/dell/anaconda3/bin/conda&#x27; &#x27;shell.bash&#x27; &#x27;hook&#x27; 2&gt; /dev/null)</span>&quot;</span></span><br><span class="line"><span class="keyword">if</span> [ $? -eq 0 ]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">eval</span> <span class="string">&quot;<span class="variable">$__conda_setup</span>&quot;</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="keyword">if</span> [ -f <span class="string">&quot;/home/dell/anaconda3/etc/profile.d/conda.sh&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">        . <span class="string">&quot;/home/dell/anaconda3/etc/profile.d/conda.sh&quot;</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">export</span> PATH=<span class="string">&quot;/home/dell/anaconda3/bin:<span class="variable">$PATH</span>&quot;</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"><span class="built_in">unset</span> __conda_setup</span><br><span class="line"><span class="comment"># &lt;&lt;&lt; conda initialize &lt;&lt;&lt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换虚拟环境</span></span><br><span class="line">conda activate torch-marques</span><br><span class="line"><span class="comment"># 启动jupyter-lab</span></span><br><span class="line">/home/marques/.conda/envs/torch-marques/bin/jupyter-lab --no-browser</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="TODO-使用Nignx反代理"><a href="#TODO-使用Nignx反代理" class="headerlink" title="TODO 使用Nignx反代理"></a>TODO 使用Nignx反代理</h1><p>挖个坑</p>
+]]></content>
+      <categories>
+        <category>Coding</category>
+      </categories>
+      <tags>
+        <tag>jupyter lab</tag>
       </tags>
   </entry>
 </search>
